@@ -16,7 +16,7 @@
 ### Hutchins et al 2011: Intelligence-Driven Computer Network Defense Informed by Analysis of Adversary Campaigns and Intrusion Kill Chains, chapters Abstract, 3.2 Intrusion Kill Chain.
 
 ### 4.3 Surveying Essential Tools for Active Reconnaissance
-- Videossa keskustellaan porttiskannauksesta ja ???
+- Videossa keskustellaan porttiskannauksesta ja siihen liittyvistä työkaluista
 - **Nmap** on vakain ja monipuolisin porttiskanneri, myös suosituin.
 - **Masscan** on puolestaan nopein porttiskanneri
 - **Udpprotoscanner** on nopea UDP porttien skannaaja
