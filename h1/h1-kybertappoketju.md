@@ -29,11 +29,11 @@
 
 
 ## Työaika
-**Tehtävien tekemiseen mennyt aika 30.3.2025 kello 16:30 - 19:15**
+Tehtävien tekemiseen mennyt aika 30.3.2025 kello 16:30 - 19:15
 
-**Raportin kirjoitusaika 31.3.2025 kello XXXX - XXXX**
+Raportin kirjoitusaika 31.3.2025 kello XXXX - XXXX
 
-**Aktiivista työskentelyä yhteensä noin XX tuntia XX minuuttia.**
+Aktiivista työskentelyä yhteensä noin XX tuntia XX minuuttia.
 
 ## Lähteet
 https://terokarvinen.com/tunkeutumistestaus/
