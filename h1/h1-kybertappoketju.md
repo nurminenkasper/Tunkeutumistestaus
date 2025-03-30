@@ -11,6 +11,22 @@
 
 ## x) Lue/katso/kuuntele ja tiivistä
 
+### PODCAST?
+
+### Hutchins et al 2011: Intelligence-Driven Computer Network Defense Informed by Analysis of Adversary Campaigns and Intrusion Kill Chains, chapters Abstract, 3.2 Intrusion Kill Chain.
+
+### 4.3 Surveying Essential Tools for Active Reconnaissance
+- Videossa keskustellaan porttiskannauksesta ja ???
+- **Nmap** on vakain ja monipuolisin porttiskanneri, myös suosituin.
+- **Masscan** on puolestaan nopein porttiskanneri
+- **Udpprotoscanner** on nopea UDP porttien skannaaja
+- Videolla näytetään ja kerrotaan runsaasti kaikkien kolmen mainitun skannerin käytön komentoja ja esimerkkejä siitä miten ne toimii
+- Videon lopussa käydään läpi EyeWitness työkalun käyttöä, joka auttaa priorisoimaan skannattuja web sivuja.
+
+(Jon Sternstein 2019)
+
+### KKO 2003:36
+
 ## a) Asenna Kali virtuaalikoneeseen
 
 ## b) Irrota Kali-virtuaalikone verkosta
@@ -40,7 +56,7 @@ https://terokarvinen.com/tunkeutumistestaus/
 
 https://lockheedmartin.com/content/dam/lockheed-martin/rms/documents/cyber/LM-White-Paper-Intel-Driven-Defense.pdf
 
-https://learning.oreilly.com/videos/the-art-of/9780135767849/9780135767849-SPTT_04_00/
+Jon Sternstein 2019 https://learning.oreilly.com/videos/the-art-of/9780135767849/9780135767849-SPTT_04_00/
 
 https://finlex.fi/fi/oikeuskaytanto/korkein-oikeus/ennakkopaatokset/2003/36
 
