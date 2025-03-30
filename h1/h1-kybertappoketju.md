@@ -25,11 +25,15 @@
 
 ## f) Tee koneiden välille virtuaaliverkko
 
+**Tauko tehtävien tekemisessä alkaen 30.3.2025 kello 19:15**
+
 ## g) Etsi Metasploitable porttiskannaamalla
+
+**Tehtävien tekeminen jatkuu XXXXXX kello XXXX**
 
 ## h) Porttiskannaa Metasploitable huolellisesti ja kaikki portit
 
-**Tehtävän lopetusaika 30.3.2025 kello XXXX. Aktiivista työskentelyä yhteensä noin XX tuntia XX minuuttia.**
+**Tehtävän lopetusaika 31.3.2025 kello XXXX. Aktiivista työskentelyä yhteensä noin XX tuntia XX minuuttia.**
 
 ## Lähteet
 https://terokarvinen.com/tunkeutumistestaus/
