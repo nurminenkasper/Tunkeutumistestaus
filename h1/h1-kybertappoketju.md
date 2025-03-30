@@ -32,3 +32,19 @@
 **Tehtävän lopetusaika 30.3.2025 kello XXXX. Aktiivista työskentelyä yhteensä noin XX tuntia XX minuuttia.**
 
 ## Lähteet
+https://terokarvinen.com/tunkeutumistestaus/
+
+https://lockheedmartin.com/content/dam/lockheed-martin/rms/documents/cyber/LM-White-Paper-Intel-Driven-Defense.pdf
+
+https://learning.oreilly.com/videos/the-art-of/9780135767849/9780135767849-SPTT_04_00/
+
+https://finlex.fi/fi/oikeuskaytanto/korkein-oikeus/ennakkopaatokset/2003/36
+
+https://tuomasvalkamo.com/PenTestCourse/week-2/
+
+https://www.kali.org/get-kali/#kali-virtual-machines
+
+https://sourceforge.net/projects/metasploitable/
+
+https://docs.rapid7.com/metasploit/metasploitable-2
+
