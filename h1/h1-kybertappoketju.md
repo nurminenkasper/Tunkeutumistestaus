@@ -9,8 +9,6 @@
 - Sapphire Radeon RX 7900 XT NITRO+ Vapor-X
 - Windows 11 Home 24H2
 
-**Tehtävän aloitusaika 30.3.2025 kello 16:30.**
-
 ## x) Lue/katso/kuuntele ja tiivistä
 
 ## a) Asenna Kali virtuaalikoneeseen
@@ -25,15 +23,17 @@
 
 ## f) Tee koneiden välille virtuaaliverkko
 
-**Tauko tehtävien tekemisessä alkaen 30.3.2025 kello 19:15**
-
 ## g) Etsi Metasploitable porttiskannaamalla
-
-**Tehtävien tekeminen jatkuu XXXXXX kello XXXX**
 
 ## h) Porttiskannaa Metasploitable huolellisesti ja kaikki portit
 
-**Tehtävän lopetusaika 31.3.2025 kello XXXX. Aktiivista työskentelyä yhteensä noin XX tuntia XX minuuttia.**
+
+## Työaika
+**Tehtävien tekemiseen mennyt aika 30.3.2025 kello 16:30 - 19:15**
+
+**Raportin kirjoitusaika 31.3.2025 kello XXXX - XXXX**
+
+**Aktiivista työskentelyä yhteensä noin XX tuntia XX minuuttia.**
 
 ## Lähteet
 https://terokarvinen.com/tunkeutumistestaus/
