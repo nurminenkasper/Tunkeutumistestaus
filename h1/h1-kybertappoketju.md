@@ -161,17 +161,22 @@ Porttiskannaus toteutettiin tällä kertaa jo lähes tutulla kaavalla, mutta lop
 ![K21](21.png)
 ![K22](22.png)
 
-Tuloksena saadaan melko pitkä kattaus tuloksia, sillä todella monessa portissa on jotain toimintaa. Tarkoituksena oli valita muutama hyökkääjälle mielenkiintoinen portti ja itselle valikoitui heti ainakin yksi selvä valinta.
+Tuloksena saadaan melko pitkä kattaus tuloksia, sillä todella monessa portissa on jotain toimintaa. Tarkoituksena oli valita muutama hyökkääjälle mielenkiintoinen portti ja itselle valikoitui heti ainakin yksi selvä valinta, kun silmään osui telnet. Lisäksi valitsin toiseksi portiksi MySQL. Analysoidaan hieman tarkemmin, miksi juuri nämä:
 
 ### 23/tcp open - telnet
+Itselle pisti portissa 23 oleva telnet heti silmään. Edeltäviltä Tietoturvana liittyviltä kursseilta oli jäänyt mieleen, että telnet ei salaa mitään liikennettä, joten tietoturvan taso on huonolla tasolla ja varmasti mielenkiintoinen kohde hyökkääjälle.
 
+### 3306/tcp open - mysql
+Portista 3306 löytyvä MySQL kiinnosti itseä. Muistelin aikaisempien kurssien MySQL heikkouksia ja ajattelin tämän olevan aika yleispätevä hyökkäyksen kohde. Skannauksesta pystytään analysoimaan esimerkiksi Versionumero 5.0.51a-3ubuntu5, joka on jo melko vanhaksi mennyt versio, joten siinä saattaa olla tietoturvariskejä.
+
+Monista muista porteista löytyisi varmasti huomautettavaa ja hyökkääjälle mielenkiintoista asiaa, mutta nämä pisti itselle omilla tiedoilla silmään.
 
 ## Työaika
 Tehtävien tekemiseen mennyt aika 30.3.2025 kello 16:30 - 19:15
 
-Raportin kirjoitusaika 31.3.2025 kello 09:15 - XXXX
+Raportin kirjoitusaika 31.3.2025 kello 09:15 - 15:10 (Katkonaisesti muiden töiden välissä)
 
-Aktiivista työskentelyä yhteensä noin XX tuntia XX minuuttia.
+Aktiivista työskentelyä yhteensä noin 5 tuntia 30 minuuttia.
 
 ## Lähteet
 https://terokarvinen.com/tunkeutumistestaus/
