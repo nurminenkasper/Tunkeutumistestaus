@@ -11,9 +11,19 @@
 
 ## x) Lue/katso/kuuntele ja tiivistä
 
-### PODCAST?
+### Herrasmieshakkerit - Rahapelimies, vieraana Janne Raevaara | 0x32
+- Jakson alussa keskusteltiin esimerkiksi Hack-a-sat Def Con CTF kilpailusta missä hakkeroitiin avaruudessa ollut sateliitti. Lisäksi käytiin läpi Helsingin Kaupungin kouluverkon murtautumista ja United Healthin potilastietojen ransomwarea
+- Vieraana Janne Raevaara, joka on entinen pokeriammattilainen ja nykyään selfmade koodari sekä yritykselle Relax Gaming, Game Expert tittelillä kulkeva peliasiantuntija / pääkoodaaja
+- Keskustelu sisältää pitkälti erilaisia haavoittovuuksia vuosien varrelta niin kasinopeleistä niin fyysisistä kuin verkossa pelattavista malleista
+- Verkkokasinoita vastaan tehdään myös paljon palvelunestohyökkäyksiä rahankiristysmielessä
 
 ### Hutchins et al 2011: Intelligence-Driven Computer Network Defense Informed by Analysis of Adversary Campaigns and Intrusion Kill Chains, chapters Abstract, 3.2 Intrusion Kill Chain.
+- Intrusion Kill Chain on tietomurtoja kuvaava systemaattinen prosessi
+- Malli koostuu seitsemästä vaiheesta: Tiedustelu (Reconnaissance), Aseistus (Weaponization), Toimitus (Delivery), Hyväksikäyttö (Exploitation), Asennus (Installation), Käsky ja hallinta (Command and Control C2), Tavoitteiden toteutus (Actions on Objectives)
+- Malli perustuu sotilaallisista käsitteistä rakennettuun kokonaisuuteen
+- Kutsutaan ketjuksi, koska ketju katkeaa mikäli joku vaiheista epäonnistuu
+
+
 
 ### 4.3 Surveying Essential Tools for Active Reconnaissance
 - Videossa keskustellaan porttiskannauksesta ja siihen liittyvistä työkaluista
@@ -26,6 +36,9 @@
 (Jon Sternstein 2019)
 
 ### KKO 2003:36
+- Tekstissä on syyte ja tuomio tilanteesta, missä käyttäjä on yrittänyt selvittää mahdollisuutta tunkeutua suojattuun tietojärjestelmään käyttämällä porttiskannausta päästäkseen Osuuspankkikeskus-OPK osuuskunnan verkkoon.
+- Teko oli kuitenkin jäänyt lyhyeksi, sillä mahdollisuutta murtautua ei löytynyt.
+- Lopullinen tuomio oli, että porttiskannauksen tekijä oli syyllistynyt tietomurron yritykseen ja hänet tuomittiin sakkorangaistukseen sekä velvoitettiin maksamaan vahingonkorvauksia osuuskunnalle 20 000 markkaa ja järjestelmää ylläpitäneelle yhtiölle 55 000 markkaa korkoineen.
 
 ## a) Asenna Kali virtuaalikoneeseen
 Kali Linux tarjoaa suoran VirtualBox asennuksen kuvakkeena, joten valitsin valmiin Pre-built VM vaihtoehdon asennukseksi. Tuorein viimeisin versio 2025.1. Asennuksessa ei mitään ongelmia.
@@ -209,3 +222,4 @@ https://web.synametrics.com/risks-running-telnet.htm
 
 https://www.invicti.com/web-vulnerability-scanner/vulnerabilities/out-of-date-version-mysql/
 
+https://open.spotify.com/episode/5OFltYUi5GwftK1ETtlBd1?si=3c521242084c4d5c
