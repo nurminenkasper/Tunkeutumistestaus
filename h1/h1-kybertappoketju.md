@@ -44,7 +44,7 @@ Itse käytin verkosta irroittamiseen suoraa terminaalin komentoa, joka poistaa v
 
 Luonnollisesti, kun nostetaan terminaalista yhteys takaisin tai yhdistetään virtuaalinen kaapeli saadaan jälleen verkkoyhteys toimimaan.
 
-[K4](4.png)
+![K4](4.png)
 
 ## c) Porttiskannaa 1000 tavallisinta tcp-porttia omasta koneestasi
 Tavoitteena oli skannata oman verkon TCP-portteja. Analysoidaan hieman tarkemmin, mitä syötetty **nmap -T4 -A localhost** tekee.
