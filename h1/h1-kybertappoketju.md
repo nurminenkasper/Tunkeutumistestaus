@@ -106,7 +106,30 @@ Käynnistelin Metasplitablen käyntiin ja kirjauduin sisään ongelmitta.
 
 ![K13](13.png)
 
+Poistin Kali Linuxini verkosta, ottamalla liitetyn kuvitteellisen kaapelin pois VirtualBoxista.
+
+![K14](14.png)
+
+Testasin vielä, että Kali poistui varmasti verkosta. Pingasin sekä 8.8.8.8, että www.google.com varmistaakseni.
+
+![K15](15.png)
+
+Varmistelin vielä samalla, että onhan Metasploitable myös pelkässä host-only verkossa pingaamalla www.google.com. 
+
+![K16](16.png)
+
+Selvittelin Metasploitablen IP-osoitteen, jotta pystyn testaamaan yhteyttä Kali Linuxin ja Metasploitablen välillä. **ip a** komennolla saatiin tarpeellinen tieto näkyviin.
+
+![K17](17.png)
+
+Seuraavaksi testiksi pingasin Metasplitablea Kali Linuxin puolelta, jotta näin toimiiko virtuaalikoneiden välinen host-only yhteys.
+
+![K18](18.png)
+
+Toimihan se ongelmitta.
+
 ## g) Etsi Metasploitable porttiskannaamalla
+
 
 
 ## h) Porttiskannaa Metasploitable huolellisesti ja kaikki portit
