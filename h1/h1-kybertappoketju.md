@@ -205,3 +205,7 @@ https://sourceforge.net/projects/metasploitable/
 
 https://docs.rapid7.com/metasploit/metasploitable-2
 
+https://web.synametrics.com/risks-running-telnet.htm
+
+https://www.invicti.com/web-vulnerability-scanner/vulnerabilities/out-of-date-version-mysql/
+
