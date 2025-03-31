@@ -92,11 +92,22 @@ Nyt kun molemmat demonit saatiin käyntiin, ajoin edellisen tehtävän saman kom
 
 ![K9](9.png)
 
-## e) Asenna Metasploitable 2 virtuaalikoneeseen
+## e) Asenna Metasploitable 2 virtuaalikoneeseen & f) Tee koneiden välille virtuaaliverkko
+Metasploitable 2 asennus ei varsinaisesti vaatinut mitään ihmeellistä. Sourceforgesta löytyi suora latauslinkki valmiille virtuaalikoneelle mikä syötettiin VirtualBoxiin. Kävin antamassa hieman lisää muistia sekä käytössä olevia prosessoreita.
 
-## f) Tee koneiden välille virtuaaliverkko
+![K10](10.png)
+
+Lisäksi asetin verkkokortin toimimaan ainoastaan Host-only Adapterina, jotta saadaan pelkkä keskenäinen kommunikointi Kali Linuxin kanssa käyttöön. Kali Linuxin puolella kävin tekemässä Adapter 2 kortiksi myös Host-only Adapterin samaa käyttötarkoitusta varten.
+
+![K11](11.png)
+![K12](12.png)
+
+Käynnistelin Metasplitablen käyntiin ja kirjauduin sisään ongelmitta.
+
+![K13](13.png)
 
 ## g) Etsi Metasploitable porttiskannaamalla
+
 
 ## h) Porttiskannaa Metasploitable huolellisesti ja kaikki portit
 
