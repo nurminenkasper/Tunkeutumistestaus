@@ -72,6 +72,7 @@ Tuloksista voidaan tässä tapauksessa päätellä esimerkiksi seuraavia:
 
 ## d) Asenna kaksi vapaavalintaista demonia ja skannaa uudelleen
 
+
 ## e) Asenna Metasploitable 2 virtuaalikoneeseen
 
 ## f) Tee koneiden välille virtuaaliverkko
@@ -96,6 +97,12 @@ https://lockheedmartin.com/content/dam/lockheed-martin/rms/documents/cyber/LM-Wh
 Jon Sternstein 2019 https://learning.oreilly.com/videos/the-art-of/9780135767849/9780135767849-SPTT_04_00/
 
 https://finlex.fi/fi/oikeuskaytanto/korkein-oikeus/ennakkopaatokset/2003/36
+
+https://linux.die.net/man/1/nmap
+
+https://cdn.comparitech.com/wp-content/uploads/2019/06/Nmap-Cheat-Sheet.pdf
+
+https://r3kind1e.github.io/2022/06/08/Nmap-OS-Fingerprinting/
 
 https://tuomasvalkamo.com/PenTestCourse/week-2/
 
