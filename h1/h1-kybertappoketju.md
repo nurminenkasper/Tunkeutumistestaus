@@ -129,8 +129,25 @@ Seuraavaksi testiksi pingasin Metasplitablea Kali Linuxin puolelta, jotta näin 
 Toimihan se ongelmitta.
 
 ## g) Etsi Metasploitable porttiskannaamalla
+Tarkistelin alkuun, että olin aikasemmin valinnut oikean Metasploitablen IP:n tarkistamalla, että etusivulle aukeaa selaimessa Metasploitablen sivu.
 
+![K19](19.png)
 
+Seuraavaksi skannasin komennolla **nmap -sn 192.168.56.102** Metasploitablen. Analysoidaan hieman tarkemmin, mitä kyseinen komento tekee ja mitä tulokset kertovat.
+
+- **nmap**: nmap valintakomento / ohjelman nimi, että saadaan edes ohjelma käyttöön.
+- **-sn**: -sn komento poistaa käytöstä porttiskannauksen, eli kyseinen komento selvittää vain sitä onko kohdeosoitteessa oleva laite tavoitettavassa tilassa
+- **192.168.56.102**: Toimittaa kohteen virkaa. Tässä tapauksessa Metasploitable virtuaalikoneeni.
+
+![K20](20.png)
+
+Tuloksista voidaankin analysoida seuraavia asioita:
+
+- **Starting Nmap 7.95**: Nmap käynnistyy ja lisäksi kerrottu versionumero sekä ajankohta
+- **mass_dns**: nmap ei saanut yhteyttä DNS serveriin ja Reverse DNS on disabloituna.
+- **Host is up**: Vahvistus siitä, että kohde on tavoitettavissa
+- **MAC Address**: Selvitys kohteen MAC-osoitteesta
+- **Nmap done**: Lopuksi vielä raportti siitä, kuinka monta IP-osoitetta (ja kuinka monta kohdetta on tavoitettavissa) skannattiin ja kuinka kauan skannauksessa kesti. Tässä tapauksessa yksi osoite, yksi hosti ja aikaa kului 0.10 sekunttia.
 
 ## h) Porttiskannaa Metasploitable huolellisesti ja kaikki portit
 
