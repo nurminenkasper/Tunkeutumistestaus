@@ -28,10 +28,47 @@
 ### KKO 2003:36
 
 ## a) Asenna Kali virtuaalikoneeseen
+Kali Linux tarjoaa suoran VirtualBox asennuksen kuvakkeena, joten valitsin valmiin Pre-built VM vaihtoehdon asennukseksi. Tuorein viimeisin versio 2025.1. Asennuksessa ei mitään ongelmia.
+
+![K1](1.png)
 
 ## b) Irrota Kali-virtuaalikone verkosta
+Alkuun oli tarpeen selvitellä, että virtuaalikone on lähtökohtaisesti verkossa. Samalla tarkistelin, mikä mahtaa olla käytössä olevan verkkokortin nimi.
+
+![K2](2.png)
+
+Itse käytin verkosta irroittamiseen suoraa terminaalin komentoa, joka poistaa verkkokortin käytöstä. Toki vaihtoehtoisesti sen voi ja myöhemmin teinkin sen suoraan VirtualBoxin asetuksista poistamalla virtuaalinen kaapeli, mikä taitaa olla loppupeleissä parempi vaihtoehto. Testinä vielä pinganus osoitteeseen 8.8.8.8, jotta nähdään irroittautumisen toimineen.
+
+![K3](3.png)
+![K3_2](14.png)
+
+Luonnollisesti, kun nostetaan terminaalista yhteys takaisin tai yhdistetään virtuaalinen kaapeli saadaan jälleen verkkoyhteys toimimaan.
+
+[K4](4.png)
 
 ## c) Porttiskannaa 1000 tavallisinta tcp-porttia omasta koneestasi
+Tavoitteena oli skannata oman verkon TCP-portteja. Analysoidaan hieman tarkemmin, mitä syötetty **nmap -T4 -A localhost** tekee.
+
+- **nmap**: nmap valintakomento / ohjelman nimi, että saadaan edes ohjelma käyttöön.
+- **-T4**: -T0-5 valinnalla saadaan määritettyä kuinka porttiskannaus ajoitetaan. -T0 ollen hitain vaihtoehto ja -T5 nopein. Tässä skannauksessa käytetty -T4 vaihtoehto on manuaalin mukaan luokkaa "Aggressive scan".
+- **-A**: on version detection valinta. Lisäämällä -A syötteeseen, porttiskannaus toimittaa esimerkiksi OS detection, version detection, script scanning ja traceroute lisäykset skannaukseen.
+- **localhost**: Toimittaa kohteen virkaa. Tähän voisi vaihtaa minkä tahansa IP osoitteen mitä skannataan, mutta koska kohteena on oma tietokone voidaan käyttää luonnollisesti myös localhost vaihtoehtoa.
+
+Kyseessä on kokonaisuudessaan melko tyypillinen npam porttiskannaus.
+
+![K5](5.png)
+
+Tuloksista voidaan tässä tapauksessa päätellä esimerkiksi seuraavia:
+
+- **Starting Nmap 7.95**: Nmap käynnistyy ja lisäksi kerrottu versionumero sekä ajankohta
+- **Host is up**: Vahvistus siitä, että kohde on tavoitettavissa
+- **Other addresses for localhost**: Muita kuin localhostin osoitetta ei skannattu
+- **All 1000 scanned ports on localhost**: Tässä tapauksessa localhostin kaikki skannatut portit ovat suljettuna, joten mitään tuloksia ei löytynyt.
+- **Not shown**: 1000 suljettua tcp porttia ei näytetty
+- **Too many fingerprints**: Nmap ei pysty löytämään tarkempia tietoja käyttöjärjestelmästä
+- **Network Distances**: 0 hops, koska tapauskessa skannataan omaa verkkoa.
+- **OS and Service detection performed**: Tämä on vain muistutus siitä, että OS and Service detection suoritettiin.
+- **Nmap done**: Lpuksi vielä raportti siitä, kuinka monta IP-osoitetta skannattiin ja kuinka kauan skannauksessa kesti. Tässä tapauksessa yksi osoite ja 1.90 sekunttia.
 
 ## d) Asenna kaksi vapaavalintaista demonia ja skannaa uudelleen
 
@@ -47,7 +84,7 @@
 ## Työaika
 Tehtävien tekemiseen mennyt aika 30.3.2025 kello 16:30 - 19:15
 
-Raportin kirjoitusaika 31.3.2025 kello XXXX - XXXX
+Raportin kirjoitusaika 31.3.2025 kello 09:15 - XXXX
 
 Aktiivista työskentelyä yhteensä noin XX tuntia XX minuuttia.
 
