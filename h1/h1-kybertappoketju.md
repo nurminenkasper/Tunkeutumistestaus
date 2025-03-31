@@ -17,13 +17,15 @@
 - Keskustelu sisältää pitkälti erilaisia haavoittovuuksia vuosien varrelta niin kasinopeleistä niin fyysisistä kuin verkossa pelattavista malleista
 - Verkkokasinoita vastaan tehdään myös paljon palvelunestohyökkäyksiä rahankiristysmielessä
 
+(Spotify 2024)
+
 ### Hutchins et al 2011: Intelligence-Driven Computer Network Defense Informed by Analysis of Adversary Campaigns and Intrusion Kill Chains, chapters Abstract, 3.2 Intrusion Kill Chain.
 - Intrusion Kill Chain on tietomurtoja kuvaava systemaattinen prosessi
 - Malli koostuu seitsemästä vaiheesta: Tiedustelu (Reconnaissance), Aseistus (Weaponization), Toimitus (Delivery), Hyväksikäyttö (Exploitation), Asennus (Installation), Käsky ja hallinta (Command and Control C2), Tavoitteiden toteutus (Actions on Objectives)
 - Malli perustuu sotilaallisista käsitteistä rakennettuun kokonaisuuteen
 - Kutsutaan ketjuksi, koska ketju katkeaa mikäli joku vaiheista epäonnistuu
 
-
+(Lockheed Martin Corporation)
 
 ### 4.3 Surveying Essential Tools for Active Reconnaissance
 - Videossa keskustellaan porttiskannauksesta ja siihen liittyvistä työkaluista
@@ -40,10 +42,14 @@
 - Teko oli kuitenkin jäänyt lyhyeksi, sillä mahdollisuutta murtautua ei löytynyt.
 - Lopullinen tuomio oli, että porttiskannauksen tekijä oli syyllistynyt tietomurron yritykseen ja hänet tuomittiin sakkorangaistukseen sekä velvoitettiin maksamaan vahingonkorvauksia osuuskunnalle 20 000 markkaa ja järjestelmää ylläpitäneelle yhtiölle 55 000 markkaa korkoineen.
 
+(Finlex 2003)
+
 ## a) Asenna Kali virtuaalikoneeseen
 Kali Linux tarjoaa suoran VirtualBox asennuksen kuvakkeena, joten valitsin valmiin Pre-built VM vaihtoehdon asennukseksi. Tuorein viimeisin versio 2025.1. Asennuksessa ei mitään ongelmia.
 
 ![K1](1.png)
+
+(Kali 2025)
 
 ## b) Irrota Kali-virtuaalikone verkosta
 Alkuun oli tarpeen selvitellä, että virtuaalikone on lähtökohtaisesti verkossa. Samalla tarkistelin, mikä mahtaa olla käytössä olevan verkkokortin nimi.
@@ -58,6 +64,8 @@ Itse käytin verkosta irroittamiseen suoraa terminaalin komentoa, joka poistaa v
 Luonnollisesti, kun nostetaan terminaalista yhteys takaisin tai yhdistetään virtuaalinen kaapeli saadaan jälleen verkkoyhteys toimimaan.
 
 ![K4](4.png)
+
+(Karvinen 2025)
 
 ## c) Porttiskannaa 1000 tavallisinta tcp-porttia omasta koneestasi
 Tavoitteena oli skannata oman verkon TCP-portteja. Analysoidaan hieman tarkemmin, mitä syötetty **nmap -T4 -A localhost** tekee.
@@ -83,6 +91,8 @@ Tuloksista voidaan tässä tapauksessa päätellä esimerkiksi seuraavia:
 - **OS and Service detection performed**: Tämä on vain muistutus siitä, että OS and Service detection suoritettiin.
 - **Nmap done**: Lpuksi vielä raportti siitä, kuinka monta IP-osoitetta skannattiin ja kuinka kauan skannauksessa kesti. Tässä tapauksessa yksi osoite ja 1.90 sekunttia.
 
+(Karvinen 2025; Die.net; Comparitech; r3kind1e 2022)
+
 ## d) Asenna kaksi vapaavalintaista demonia ja skannaa uudelleen
 Asensin vapaavalintaisina demoneina apache2 ja openssh, mutta ne olikin jo valmiiksi myös asennettu Kalin pakettiin.
 
@@ -104,6 +114,8 @@ Nyt kun molemmat demonit saatiin käyntiin, ajoin edellisen tehtävän saman kom
 - **Nmap done**: Skannauksen kesto muuttunut oleellisesti ja tällä kertaa meni 8.17 sekunttia.
 
 ![K9](9.png)
+
+(Karvinen 2025; Die.net; Comparitech; Vivek Gite 2024; UBports 2023)
 
 ## e) Asenna Metasploitable 2 virtuaalikoneeseen & f) Tee koneiden välille virtuaaliverkko
 Metasploitable 2 asennus ei varsinaisesti vaatinut mitään ihmeellistä. Sourceforgesta löytyi suora latauslinkki valmiille virtuaalikoneelle mikä syötettiin VirtualBoxiin. Kävin antamassa hieman lisää muistia sekä käytössä olevia prosessoreita.
@@ -141,6 +153,8 @@ Seuraavaksi testiksi pingasin Metasplitablea Kali Linuxin puolelta, jotta näin 
 
 Toimihan se ongelmitta.
 
+(Karvinen 2025; Tuomas Valkamo 2022; Sourceforge 2025; Rapid7 2025)
+
 ## g) Etsi Metasploitable porttiskannaamalla
 Tarkistelin alkuun, että olin aikasemmin valinnut oikean Metasploitablen IP:n tarkistamalla, että etusivulle aukeaa selaimessa Metasploitablen sivu.
 
@@ -161,6 +175,8 @@ Tuloksista voidaankin analysoida seuraavia asioita:
 - **Host is up**: Vahvistus siitä, että kohde on tavoitettavissa
 - **MAC Address**: Selvitys kohteen MAC-osoitteesta
 - **Nmap done**: Lopuksi vielä raportti siitä, kuinka monta IP-osoitetta (ja kuinka monta kohdetta on tavoitettavissa) skannattiin ja kuinka kauan skannauksessa kesti. Tässä tapauksessa yksi osoite, yksi hosti ja aikaa kului 0.10 sekunttia.
+
+(Karvinen 2025; Comparitech; Die.net)
 
 ## h) Porttiskannaa Metasploitable huolellisesti ja kaikki portit
 Porttiskannaus toteutettiin tällä kertaa jo lähes tutulla kaavalla, mutta loppuun tuli vielä yksi lisäys. Analysoidaan kuitenkin vielä syötetty komento **nmap -A -T4 -p-**
@@ -183,6 +199,8 @@ Itselle pisti portissa 23 oleva telnet heti silmään. Edeltäviltä Tietoturvan
 Portista 3306 löytyvä MySQL kiinnosti itseä. Muistelin aikaisempien kurssien MySQL heikkouksia ja ajattelin tämän olevan aika yleispätevä hyökkäyksen kohde. Skannauksesta pystytään analysoimaan esimerkiksi Versionumero 5.0.51a-3ubuntu5, joka on jo melko vanhaksi mennyt versio, joten siinä saattaa olla tietoturvariskejä.
 
 Monista muista porteista löytyisi varmasti huomautettavaa ja hyökkääjälle mielenkiintoista asiaa, mutta nämä pisti itselle omilla tiedoilla silmään.
+
+(Karvinen 2025; Comparitech; Die.net; Synametrics Technologies; Invicti)
 
 ## Työaika
 Tehtävien tekemiseen mennyt aika 30.3.2025 kello 16:30 - 19:15
