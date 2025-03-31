@@ -150,6 +150,20 @@ Tuloksista voidaankin analysoida seuraavia asioita:
 - **Nmap done**: Lopuksi vielä raportti siitä, kuinka monta IP-osoitetta (ja kuinka monta kohdetta on tavoitettavissa) skannattiin ja kuinka kauan skannauksessa kesti. Tässä tapauksessa yksi osoite, yksi hosti ja aikaa kului 0.10 sekunttia.
 
 ## h) Porttiskannaa Metasploitable huolellisesti ja kaikki portit
+Porttiskannaus toteutettiin tällä kertaa jo lähes tutulla kaavalla, mutta loppuun tuli vielä yksi lisäys. Analysoidaan kuitenkin vielä syötetty komento **nmap -A -T4 -p-**
+
+- **nmap**: nmap valintakomento / ohjelman nimi, että saadaan edes ohjelma käyttöön.
+- **-A**: on version detection valinta. Lisäämällä -A syötteeseen, porttiskannaus toimittaa esimerkiksi OS detection, version detection, script scanning ja traceroute lisäykset skannaukseen.
+- **-T4**: -T0-5 valinnalla saadaan määritettyä kuinka porttiskannaus ajoitetaan. -T0 ollen hitain vaihtoehto ja -T5 nopein. Tässä skannauksessa käytetty -T4 vaihtoehto on manuaalin mukaan luokkaa "Aggressive scan".
+- **-p-**: Tällä kertaa ajettu uusi komento. -p- syötteellä porttiskannaus käy läpi kaikki portit 1-65535 välillä. 
+- **localhost**: Toimittaa kohteen virkaa. Tähän voisi vaihtaa minkä tahansa IP osoitteen mitä skannataan, mutta koska kohteena on oma tietokone voidaan käyttää luonnollisesti myös localhost vaihtoehtoa.
+
+![K21](21.png)
+![K22](22.png)
+
+Tuloksena saadaan melko pitkä kattaus tuloksia, sillä todella monessa portissa on jotain toimintaa. Tarkoituksena oli valita muutama hyökkääjälle mielenkiintoinen portti ja itselle valikoitui heti ainakin yksi selvä valinta.
+
+### 23/tcp open - telnet
 
 
 ## Työaika
