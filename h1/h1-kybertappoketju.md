@@ -71,7 +71,26 @@ Tuloksista voidaan tässä tapauksessa päätellä esimerkiksi seuraavia:
 - **Nmap done**: Lpuksi vielä raportti siitä, kuinka monta IP-osoitetta skannattiin ja kuinka kauan skannauksessa kesti. Tässä tapauksessa yksi osoite ja 1.90 sekunttia.
 
 ## d) Asenna kaksi vapaavalintaista demonia ja skannaa uudelleen
+Asensin vapaavalintaisina demoneina apache2 ja openssh, mutta ne olikin jo valmiiksi myös asennettu Kalin pakettiin.
 
+![K6](6.png)
+
+Piti hieman muistella ja lueskella miten Apache2 sai käyntiin, mutta pikaisella googletuksella ja sitä kautta oikeilla komennoilla sain apache2.servicen nostettua ylös. 
+
+![K7](7.png)
+
+Sama homma ssh kanssa, mutta googletuksella homma rokkaamaan.
+
+![K8](8.png)
+
+Nyt kun molemmat demonit saatiin käyntiin, ajoin edellisen tehtävän saman komennon porttiskannausta varten localhostille. Tällä kertaa hieman kattavimmilla tuloksilla. Viime kerrasta poiketen analysoiden tuloksia löydetään seuraavia eroja:
+
+- **22/tcp open**: Portista 22 löytyy käynnistelty OpenSSH ja siihen liittyvät ssh-hostkeyt.
+- **80/tcp open**: Portista 80 löytyy puolestaan käynnistelty Apache2 ja siihen liittyvät http-server/title postaukset
+- **Running / OS**: Tällä kertaa aikaisemmasta poiketen OS and Service detection on tehnyt työtä käskettyä ja tunnistanut käyttöjärjestelmäksi Linuxin, samalla ilmoittaen myös esimerkiksi Kernel version.
+- **Nmap done**: Skannauksen kesto muuttunut oleellisesti ja tällä kertaa meni 8.17 sekunttia.
+
+![K9](9.png)
 
 ## e) Asenna Metasploitable 2 virtuaalikoneeseen
 
@@ -103,6 +122,10 @@ https://linux.die.net/man/1/nmap
 https://cdn.comparitech.com/wp-content/uploads/2019/06/Nmap-Cheat-Sheet.pdf
 
 https://r3kind1e.github.io/2022/06/08/Nmap-OS-Fingerprinting/
+
+https://www.cyberciti.biz/faq/star-stop-restart-apache2-webserver/
+
+https://forums.ubports.com/topic/8631/howto-autostart-ssh/2
 
 https://tuomasvalkamo.com/PenTestCourse/week-2/
 
