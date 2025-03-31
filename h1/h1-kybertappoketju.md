@@ -192,34 +192,34 @@ Raportin kirjoitusaika 31.3.2025 kello 09:15 - 15:10 (Katkonaisesti muiden töid
 Aktiivista työskentelyä yhteensä noin 5 tuntia 30 minuuttia.
 
 ## Lähteet
-https://terokarvinen.com/tunkeutumistestaus/
+Karvinen T 2025. h1 Kybertappoketju. Tero Karvisen verkkosivut. Luettavissa: https://terokarvinen.com/tunkeutumistestaus/ Luettu 30.3.2025
 
-https://lockheedmartin.com/content/dam/lockheed-martin/rms/documents/cyber/LM-White-Paper-Intel-Driven-Defense.pdf
+Lockheed Martin Corporation. Intelligence-Driven Computer Network Defense Informed by Analysis of Adversary Campaigns and Intrusion Kill Chains. Luettavissa: https://lockheedmartin.com/content/dam/lockheed-martin/rms/documents/cyber/LM-White-Paper-Intel-Driven-Defense.pdf Luettu 30.3.2025
 
-Jon Sternstein 2019 https://learning.oreilly.com/videos/the-art-of/9780135767849/9780135767849-SPTT_04_00/
+Jon Sternstein 2019. The Art of Hacking. Video katsottavissa: https://learning.oreilly.com/videos/the-art-of/9780135767849/9780135767849-SPTT_04_00/ Katsottu 30.3.2025
 
-https://finlex.fi/fi/oikeuskaytanto/korkein-oikeus/ennakkopaatokset/2003/36
+Finlex 2003. Ennakkopäätökset KKO:2003:36. Luettavissa: https://finlex.fi/fi/oikeuskaytanto/korkein-oikeus/ennakkopaatokset/2003/36 Luettu 30.3.2025
 
-https://linux.die.net/man/1/nmap
+Die.net nmap Linux mag page. Luettavissa: https://linux.die.net/man/1/nmap Luettu: 30.3.2025
 
-https://cdn.comparitech.com/wp-content/uploads/2019/06/Nmap-Cheat-Sheet.pdf
+Comparitech. Nmap cheat sheet. Luettavissa: https://cdn.comparitech.com/wp-content/uploads/2019/06/Nmap-Cheat-Sheet.pdf Luettu 30.3.2025
 
-https://r3kind1e.github.io/2022/06/08/Nmap-OS-Fingerprinting/
+r3kind1e 2022. Nmap OS Fingerprinting. Luettavissa: https://r3kind1e.github.io/2022/06/08/Nmap-OS-Fingerprinting/ Luettu 30.3.2025
 
-https://www.cyberciti.biz/faq/star-stop-restart-apache2-webserver/
+Vivek Gite 2024. Start / Stop and Restart Apache 2 Web Server Command. Luettavissa: https://www.cyberciti.biz/faq/star-stop-restart-apache2-webserver/ Luettu 30.3.2025
 
-https://forums.ubports.com/topic/8631/howto-autostart-ssh/2
+mark1250 UBports 2023. Howto autostart ssh. Luettavissa: https://forums.ubports.com/topic/8631/howto-autostart-ssh/2 Luettu 30.3.2025
 
-https://tuomasvalkamo.com/PenTestCourse/week-2/
+Tuomas Valkamo 2022. Hacking into a Target Using Metasploit. Luettavissa: https://tuomasvalkamo.com/PenTestCourse/week-2/ Luettu 30.3.2025
 
-https://www.kali.org/get-kali/#kali-virtual-machines
+Kali 2025. Pre-built Virtual Machines. Luettavissa: https://www.kali.org/get-kali/#kali-virtual-machines Luettu 30.3.2025
 
-https://sourceforge.net/projects/metasploitable/
+Sourceforge 2025. Metasploitable. Luettavissa: https://sourceforge.net/projects/metasploitable/ Luettu 30.3.2025
 
-https://docs.rapid7.com/metasploit/metasploitable-2
+Rapid7 2025. Metasploitable 2. Luettavissa: https://docs.rapid7.com/metasploit/metasploitable-2 Luettu 30.3.2025
 
-https://web.synametrics.com/risks-running-telnet.htm
+Synametrics Technologies. Security risks involved with running Telnet client and server. Luettavissa: https://web.synametrics.com/risks-running-telnet.htm Luettu 31.3.2025
 
-https://www.invicti.com/web-vulnerability-scanner/vulnerabilities/out-of-date-version-mysql/
+Invicti. Out-of-date Version (MySQL). Luettavissa: https://www.invicti.com/web-vulnerability-scanner/vulnerabilities/out-of-date-version-mysql/ Luettu 31.3.2025
 
-https://open.spotify.com/episode/5OFltYUi5GwftK1ETtlBd1?si=3c521242084c4d5c
+Spotify 2024. Herrasmieshakkerit - Rahapelimies, vieraana Janne Raevaara | 0x32. Kuunneltavissa: https://open.spotify.com/episode/5OFltYUi5GwftK1ETtlBd1?si=3c521242084c4d5c Kuunneltu 31.3.2025
