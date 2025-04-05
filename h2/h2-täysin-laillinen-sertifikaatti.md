@@ -9,7 +9,7 @@
 - Sapphire Radeon RX 7900 XT NITRO+ Vapor-X
 - Windows 11 Home 24H2
 
-**Tehtävän aloitusaika 5.4.2025 kello XXXX**
+**Tehtävän aloitusaika 5.4.2025 kello 10:00**
 
 ## x) Lue/katso/kuuntele ja tiivistä
 
@@ -35,7 +35,10 @@
 
 ## b) Kettumaista
 
+**Tauko tehtävien tekemisestä alkaen 5.4.2025 kello 11:30**
+
 ## c) Reflected XSS into HTML context with nothing encoded
+**Tehtävien tekeminen jatkuu 5.4.2025 kello 17:30**
 
 ## d) Stored XSS into HTML context with nothing encoded
 
@@ -44,6 +47,8 @@
 ## f) File path traversal, traversal sequences blocked with absolute path bypass
 
 ## g) File path traversal, traversal sequences stripped non-recursively
+
+**Tauko tehtävien tekemisestä alkaen 5.4.2025 kello 20:15**
 
 ## h) Insecure direct object references
 
