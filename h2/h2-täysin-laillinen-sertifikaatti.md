@@ -215,7 +215,20 @@ Ja näin. Reseponsesta löydetään jälleen vastaavat käyttäjätiedot passwd 
 
 (PortSwigger 2025)
 ## g) File path traversal, traversal sequences stripped non-recursively
+Tavoite on jälleen sama, päästä tarkastelemaan /etc/passwd tiedoston tietoja. Tällä kertaa kuitenkin suojausta sivustolla muutettu niin, että se poistaa tiedostonnimestä polkuja läpikäyvät sekvenssit ja edellinen absoluuttinen polku on suojattu, eli jos syötetään esimerkiksi ../../../etc/passwd jäljelle ei jää mitään mihin siirtyä. Sivustolle mennessä jälleen valinnanvaraa, mutta tarkistellaan ensimmäistä ZAProxyssä tarkemmin.
 
+![K41](41.png)
+![K42](42.png)
+
+Kuten mainitsin, ratkaisu ei voi olla absoluuttinen polku eikä tyypillinen polkuja läpikäyvä sekvenssi ../../../, vaan ratkaisu tulee olla jotain muuta. PortSwigger tarjoilee jälleen lapaan tavan, missä hyödynnetään sisäkkäisiä läpikulkusekvenssejä eli käytännössä lisätään syöte tuplana ja suojaus poistaa niistä vain sisemmät sekvenssit. Syötin filename perään **=....//....//....//etc/passwd** ja testasin lähettää Requestin. 
+
+![K43](43.png)
+
+Ja kuten nähdään, Reponsena saadaan jälleen /etc/passwd sisältö. Tässä tapauksessa kun syötettiin tuplana läpikulkusekvenssit, poistaa suojaus pyynnöstä vain sisimmäiset joten jäljelle jää vielä vastaava setti sekvenssejä poiston jälkeenkin.
+
+![K44](44.png)
+
+(PortSwigger 2025)
 **Tauko tehtävien tekemisestä alkaen 5.4.2025 kello 20:15**
 
 ## h) Insecure direct object references
