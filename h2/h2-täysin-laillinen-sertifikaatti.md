@@ -229,6 +229,7 @@ Ja kuten nähdään, Reponsena saadaan jälleen /etc/passwd sisältö. Tässä t
 ![K44](44.png)
 
 (PortSwigger 2025)
+
 **Tauko tehtävien tekemisestä alkaen 5.4.2025 kello 20:15**
 
 ## h) Insecure direct object references
@@ -308,7 +309,7 @@ Lopulta kun lähetetään **stockApi=http://localhost/admin/delete?username=carl
 
 (PortSwigger 2025)
 
-**Tehtävän lopetusaika 6.4.2025 kello XXXX. Aktiivista työskentelyä yhteensä noin X tuntia XX minuuttia.**
+**Tehtävän lopetusaika 6.4.2025 kello 16:30. Aktiivista työskentelyä yhteensä noin 9 tuntia 45 minuuttia.**
 
 ## Lähteet
 Karvinen T 2025. h2 Täysin Laillinen Sertifikaatti. Tero Karvisen verkkosivut. Luettavissa: https://terokarvinen.com/tunkeutumistestaus/ Luettu 5.4.2025
