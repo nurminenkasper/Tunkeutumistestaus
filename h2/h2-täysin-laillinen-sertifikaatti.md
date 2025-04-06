@@ -328,4 +328,12 @@ PortSwigger 2025. Lab: Reflected XSS into HTML context with nothing encoded. Lue
 
 PortSwigger 2025. Lab: Stored XSS into HTML context with nothing encoded. Luettavissa: https://portswigger.net/web-security/cross-site-scripting/stored/lab-html-context-nothing-encoded Luettu 5.4.2025
 
+PortSwigger 2025. Lab: File path traversal, simple case. Luettavissa: https://portswigger.net/web-security/file-path-traversal/lab-simple Luettu 5.4.2025
 
+PortSwigger 2025. Lab: File path traversal, traversal sequences blocked with absolute path bypass. Luettavissa: https://portswigger.net/web-security/file-path-traversal/lab-absolute-path-bypass Luettu 5.4.2025
+
+PortSwigger 2025. Lab: File path traversal, traversal sequences stripped non-recursively. Luettavissa: https://portswigger.net/web-security/file-path-traversal/lab-sequences-stripped-non-recursively Luettu 5.4.2025
+
+PortSwigger 2025. Lab: Insecure direct object references. Luettavissa: https://portswigger.net/web-security/access-control/lab-insecure-direct-object-references Luettu 6.4.2025
+
+PortSwigger 2025. Lab: Basic SSRF against the local server. Luettavissa: https://portswigger.net/web-security/ssrf/lab-basic-ssrf-against-localhost Luettu 6.4.2025
