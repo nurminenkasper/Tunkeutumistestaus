@@ -51,16 +51,10 @@
 **Tauko tehtävien tekemisestä alkaen 5.4.2025 kello 20:15**
 
 ## h) Insecure direct object references
+**Tehtävien tekeminen jatkuu 6.4.2025 kello 11:30**
 
 ## i) Basic SSRF against the local server
 
-## j) Vapaaehtoinen, hieman haastava: Server-side template injection with information disclosure via user-supplied objects
-
-## k) Vapaaehtoinen, helppo: Asenna pencode ja muunna sillä jokin merkkijono
-
-## l) Vapaaehtoinen: Mitmproxy
-
-## m) Vapaaehtoinen: Ratkaise lisää PortSwigger Labs -tehtäviä.
 
 **Tehtävän lopetusaika 5.4.2025 kello XXXX. Aktiivista työskentelyä yhteensä noin X tuntia XX minuuttia.**
 
