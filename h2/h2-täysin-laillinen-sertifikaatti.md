@@ -108,6 +108,29 @@ Alemmassa valikossa Patternit pystyi lisäämään myös, pelkkää Pattern käy
 ## c) Reflected XSS into HTML context with nothing encoded
 **Tehtävien tekeminen jatkuu 5.4.2025 kello 17:30**
 
+Tehtävänannossahan oli tiedossa, että cross-sit scripting haavoittuvuus löytyy HTML muodossa hakutoiminnosta ja tavoitteena oli saada sivusto pyytämään funtkiota **alert**. Itse aloitin syöttämällä pelkän **alert** hakukentään ja tarkastelemalla tuloksia.
+
+![K14](14.png)
+
+Sivuston lähdekoodia tarkastelemalla nähdään, että syöte on suoraan h1/h1 muodossa sivustolla.
+
+![K15](15.png)
+
+Näin ollen, kun hakukentässä suoritetaan suoraan alert-funktiota käyttävä JavaScript-koodi, saadaan tehtävä suoritettu onnistuneesti.
+
+- <Script> tagit toimittaa tässä tapauksessa tapaa kertoa HTML käyttävälle selaimella, että niiden sisällä on suoritettava JavaScript
+- alert(1) funtkio on JavaScript-koodi, joka luo ponnahdusikkunan selaimeen ja tulosteena 1.
+
+![K16](16.png)
+
+Ja kun tarkastellaan tarkemmin uutta osoiteriviä, nähdään sielä suoritettu skripti myös.
+
+![K17](17.png)
+
+Tehtävä tämän myötä suoritettu.
+
+![K18](18.png)
+
 ## d) Stored XSS into HTML context with nothing encoded
 
 ## e) File path traversal, simple case
