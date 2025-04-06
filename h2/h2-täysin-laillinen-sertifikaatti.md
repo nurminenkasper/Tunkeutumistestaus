@@ -37,6 +37,8 @@
 #### Path traversal
 - Path traversal tapahtuu esimerkiksi syöttämällä tiedostonnimeksi joku polku, missä siirrytään muihin kansioihin ja päästään käsiksi juurihakemiston tiedostoihin.
 - Hyökkääjä pääsee näin ollen lukemaan tiedostoja ja kansioita palvelimelta, missä on arkaluontoista tietoa
+
+(PortSwigger 2025)
 #### Server-side request forgery (SSRF)
 - Tyypillisessä SSRF-hyökkäyksessä hyökkääjä saa palvelimen muodostamaan yhteyden sisäisiin palveluihin organisaation infrasa
 - Joissakin tapauksissa myös pystyy pakottamaan palvelimen muodostamaan yhteyden ulkoisiin järjestelmiin
@@ -49,8 +51,57 @@
 
 (PortSwigger 2025)
 ## a) Totally Legit Sertificate.
+ZAProxy asentaminen tapahtui komennolla
+
+        sudo apt-get install zaproxy
+
+![K1](1.png)
+
+Käynnistys terminaalissa **zaproxy** komennolla ja avatessa päivittelin kaikki Add-onsit, kerta ohjelma sitä itse ehdotteli.
+
+![K2](2.png)
+
+ZAP asettaminen Firefoxin proxyksi vaati tietenkin CA-sertifikaatin hakemista. Tämä löytyi **Tools -> Options -> Network -> Server Certificates**. Napsauttelin vielä uuden sertifikaatin generointia ennen sen syöttämistä Firefoxille.
+
+![K3](3.png)
+
+Firefoxin puolelta löytyy **Settings** välilehdeltä **Certificates** kohta hyödyntämällä hakutoimintoa.
+
+![K4](4.png)
+
+Import nappulalla päästään syöttämään ZAP haettu sertifikaatti, Teron oppitunneilta muistelin **"Trust this CA to identify websites."** tarpeellisuuden, mutta käy myös logiikalla ajatellen järkeen verraten mitä ollaan seuraavaksi tehtävissä tekemässä.
+
+![K5](5.png)
+
+Seuraavaksi Firefoxin **Network Settings** välilehdelle tekemään tarvittavat Proxy muutokset.
+
+![K6](6.png)
+![K7](7.png)
+
+Tehtävänannossa oli myös tavoitteena saada ZAP sieppaamaan kuvat. ZAP asetuksista **Tools -> Options -> Display** löytyy kohta **Process images in HTTP requests/responses** raksi ruutuun ja homma rokkaa.
+
+![K8](8.png)
+
+Proxy testaukseen Metaspoitablen weppipalvelun kanssa ja hyvinhän se lähti rokkaamaan.
+
+![K9](9.png)
 
 ## b) Kettumaista
+FoxyProxy asentamista varten suunnattiin Firefoxin Add-ons valikoimaan.
+
+![K10](10.png)
+
+Asentamisen jälkeen laajennus käyntiin ja laajemmin auki kohdasta **Options**.
+
+![K11](11.png)
+
+ZAP profiilin luontia varten **Proxies** välilehdeltä luodaan tarpeellinen profiili.
+
+![K12](12.png)
+
+Alemmassa valikossa Patternit pystyi lisäämään myös, pelkkää Pattern käyttöä varten. Lisäilin Localhostin jo valmiiksi, PortSwigger tehtäviä varten en ollut vielä varma mitä lisäillä.
+
+![K13](13.png)
 
 **Tauko tehtävien tekemisestä alkaen 5.4.2025 kello 11:30**
 
