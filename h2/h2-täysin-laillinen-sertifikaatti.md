@@ -307,6 +307,8 @@ Lopulta kun lähetetään **stockApi=http://localhost/admin/delete?username=carl
 
 ![K69](69.png)
 
+Käytännössä siis tässä tehtävässä verkkokauppa käyttää StockApi pyyntöä kysyäkseen varastotietoja ja sitä kautta hyökkääjä pystyy muuttamaan URL osoitetta ja tekemään pyynnön suoraan palvelimen omaan sisäiseen osoitteeseen http://localhost/admin.
+
 (PortSwigger 2025)
 
 **Tehtävän lopetusaika 6.4.2025 kello 16:30. Aktiivista työskentelyä yhteensä noin 9 tuntia 45 minuuttia.**
