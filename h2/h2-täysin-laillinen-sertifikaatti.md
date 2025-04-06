@@ -157,8 +157,8 @@ Tavoitteena oli siis saada jälleen kutsumaan alert funktiota, kun blogipostia k
 
 Ja nyt kun tarkastellaan blogin sivustoa, saadaan palautteena suoritettu skripti ja tehtävä onnistuneesti suoritettuna.
 
-![K26](26.png)
 ![K27](27.png)
+![K26](26.png)
 
 (PortSwigger 2025)
 ## e) File path traversal, simple case
