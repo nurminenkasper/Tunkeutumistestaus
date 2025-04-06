@@ -268,13 +268,45 @@ Bingo. Responsessa nähdään joku tallennettu keskustelu toisen kanssa, missä 
 
 ![K55](55.png)
 
-Ja toimiihan se, kirjautuminen onnistunut ja harjoitus suoritettu onnistuneesti.
+Ja toimiihan se, kirjautuminen onnistunut ja harjoitus suoritettu onnistuneesti. Harjoituksessa osoitettiin, kuinka IDOR-havoittuvuudella voi päästä käsiksi muiden käyttäjien Chatbot keskusteluihin muuttamalla vain osoitteen tietoja.
 
 ![K56](56.png)
 
 (PortSwigger 2025)
 ## i) Basic SSRF against the local server
+Tavoitteena oli suorittaa tyypillinen SSRF hyökkäys paikallista palvelinta vastaan. Tehtävää avatessa nähdään jälleen tuotteita, joten avataan yksi niistä ja perehdytään tarkemmin.
 
+![K57](57.png)
+![K59](59.png)
+
+Tuotteiden alla oli mahdollisuus tarkastaa saldotilanne, joten tarkastelin ja katsoin mitä syöte antaa ZAProxyn puolella. 
+
+![K59](59.png)
+![K60](60.png)
+
+PortSwiggerin sivustolla olikin puhetta siitä, miten tyypillinen localhost SSRF hyökkäys toimii muokkaamalla StockApi:a ja lähettämällä HTTP-pyyntö takaisin palvelimelle Proxyn kautta. Tämän takia tarkastelinkin tarkemmin product sivuston POST:stock syötettä Requesterissä. Ajattelin, että mikäli StockApi osoitetta muokkaa siihen mihin haluaa mennä saataisiin joku vastaus takaisin. Muokkailin **stockApi=http://localhost/admin**, koska tehtävän tavoitehan oli päästä tuhoamaan admin sivustolta käyttäjä Carlos. 
+
+![K62](62.png)
+
+Responsesta nähdäänkin HTML syötettä, missä esimerkiksi selvästi Admin panel, Carlos ja Delete nappula? Yritin avata uutta osoitetta Firefoxissa.
+
+![K63](63.png)
+![K64](64.png)
+
+Ei toiminut lainkaan, yritin tätä useampaan kertaan muttei lähtenyt toimimaan. Tämän jälkeen yritin mennä vielä muokkaamisen jälkeen suoraan /admin sivustolle, mutta sinnekkään ei päässyt.
+
+![K65](65.png)
+
+Tässä vaiheessa en oikein tiennyt enään mitä tehdä, koska PortSwiggerin artikkelissakaan ei asiasta varsinaisesti puhuttu. Päädyin tarkastelemaan **Solution** kohtaa ja huomasin, että hyökkäys pitää lähettää niin, että lähetetään suoraan stockApi parametri millä poistetaan käyttäjä carlos. Ja kuten muutamassa kuvassa ylempää nähdäänkin, silähän on tuo kyseinen **/admin/delete?username=carlos** näkyvissä, mutta en vain jotenkin tajunnut käyttää sitä suoraan.
+
+![K66](66.png)
+![K68](68.png)
+
+Lopulta kun lähetetään **stockApi=http://localhost/admin/delete?username=carlos** saadaan tehtävä suoritettu onnistuneesti.
+
+![K69](69.png)
+
+(PortSwigger 2025)
 
 **Tehtävän lopetusaika 6.4.2025 kello XXXX. Aktiivista työskentelyä yhteensä noin X tuntia XX minuuttia.**
 
