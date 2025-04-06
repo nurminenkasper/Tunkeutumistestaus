@@ -162,9 +162,58 @@ Ja nyt kun tarkastellaan blogin sivustoa, saadaan palautteena suoritettu skripti
 
 (PortSwigger 2025)
 ## e) File path traversal, simple case
+ZAP päälle ja tehtävä auki. Tehtävänannossa on annettu selvät ohjeet löytää File path traversal tavalla /etc/passwd. Etusivulta löytyy valikoima erilaisia tuotteita, joten alkuun yksi niistä auki ja katsotaan tarkemmin mitä ZAP tuottaa.
 
+![K28](28.png)
+
+GET:eistä pistää itselle silmään **GET:image(filename)** etenkin sen takia, että siinä on juuri tuo filename. Portswiggerin "What is path traversal" esimerkit sisälsi nimenomaan hyökkäyksiä missä hyökkääjä hyödyntää filename parametriä.
+
+![K29](29.png)
+
+ZAP:issa komento **CTRL+W** avaa suoraan Requesterin, missä voidaan tarkastella tarkemmin GET requestia. Ja sieltähän pistää silmään tietenkin tässä tapauksessa 8.jpg kuvan **filename=8.jpg**
+
+![K30](30.png)
+
+Mitä jos vaihdetaan kuvan tilalle kutsu tarkastella /etc/passwd sisältöä? Lisäämällä filename= perään ../../../etc/passwd ja lähettämällä Request. Responsessa pitäisi näkyä mahdollisesti jotain, sillä Unix pohjaisissa järjestelmissä tämä polku sisältää tyypillisesti palvelimelle rekisteröidyt käyttäjät.
+
+![K31](31.png)
+
+Responsessa HTTP/1.1 400 Bad Request ja "Missing parameter 'filename'" aiheutti kyllä hetken harmaita hiuksia. Tarkemmalla vilkaisulla muokattuun filename syötteeseen huomasin, että olin vahingossa poistanut = merkin filename perästä. Uusi yritys perään muokatulla rivillä.
+
+![K32](32.png)
+
+Tällä kertaa HTTP/1.1 200 OK, joten homma meni ainakin läpi. Nyt ku ei tarkastella enään kuvaa, voidaan vaihtaa Body: Image alta Text tilalle niin nähdään Response tarkemmin.
+
+![K33](33.png)
+
+Responsessahan näkyy selvästi /etc/passwd sisältöä, eli palvelimelle rekisteröityjä käyttäjiä ja kun palaillaan takaisin Firefoxiin tarkastelemaan niin harjoitus näyttää olevan suoritettu.
+
+![K34](34.png)
+
+(PortSwigger 2025)
 ## f) File path traversal, traversal sequences blocked with absolute path bypass
+Ideahan tässä tehtävänannossa on sama, saada esiin /etc/passwd tiedosto. Ainoa ero on se, että tällä kertaa sivusto on konfiguroitu niin ettei ../ sekvenssejä pystytä käyttämään eli kuten tehtävän nimi antaa jo ymmärtää. Tehtäväsivuston ensinäkymä on samanlainen, joten availlaan ensimmäinen sivuston valinnoista ja tarkastellaan tarkemmin ZAProxyssä.
 
+![K35](35.png)
+
+GET:image(filename) jälleen auki **CTRL+W** komennolla ja tällä kertaa nähdäänkin samanlainen polku, mutta kuvalla 16.jpg.
+
+![K36](36.png)
+![K37](37.png)
+
+Testasin kuitenkin, mitä tapahtuu jos syötän edellisen tehtäävän vastaavan ../../../etc/passwd ja lähetän pyynnön. Vastauksena saatiin kuitenkin "No such file", eli toiminto on blokattu, kuten ohjeistuksesta olikin tiedossa.
+
+![K38](38.png)
+
+PortSwiggerin sivuilla onkin puhetta siitä, että joissakin tapauksissa on mahdollista käyttään "absoluuttista polkua", joten jätin syötteestä vain alun ../../../ pois ja laitoin pelkän **filename=/etc/passwd**
+
+![K39](39.png)
+
+Ja näin. Reseponsesta löydetään jälleen vastaavat käyttäjätiedot passwd tiedoston syötteestä.
+
+![K40](40.png)
+
+(PortSwigger 2025)
 ## g) File path traversal, traversal sequences stripped non-recursively
 
 **Tauko tehtävien tekemisestä alkaen 5.4.2025 kello 20:15**
