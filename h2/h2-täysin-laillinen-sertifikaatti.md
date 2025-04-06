@@ -19,17 +19,20 @@
 - Broken Access Control on käyttöoikeuksien rikkomista, eli pääsyä paikkaan tai toimintoihin mihin ei pitäisi olla oikeuksia
 - Tämmöisiä voi tapahtua esimerkiksi ohjelmiston tai sivuston puutteellisissa käyttöoikeuden tarkastuksissa
 - Johtaa helpoisti tietovuotoihin, tietojen ja järjestelmän muokkaamiseen / pääsyyn.
+
 (OWASP 2021)
 #### A10:2021 – Server-Side Request Forgery (SSRF)
 - Hyökkäyksessä päästään lähettämään palvelimelle pyyntöjä joihin ei pitäisi päästä
 - Tapahtuu, koska palvelin ei tarkista käyttäjän antamia osoitetietoja
 - Seurauksena saattaa olla pääsy järjestelmään ja tietovuotoja
+
 (OWASP 2021)
 ### PortSwigget Academy:
 
 #### Insecure direct object references (IDOR)
 - IDOR hyökkäyksissä päästään käsiksi objekteihin suoraan käyttäjän syötteellä
 - Kyseessä on pääsynvalvonnan toteutusvirheestä johtuva tapa kiertää pääsynvalvontaa
+
 (PortSwigger 2025)
 #### Path traversal
 - Path traversal tapahtuu esimerkiksi syöttämällä tiedostonnimeksi joku polku, missä siirrytään muihin kansioihin ja päästään käsiksi juurihakemiston tiedostoihin.
@@ -37,11 +40,13 @@
 #### Server-side request forgery (SSRF)
 - Tyypillisessä SSRF-hyökkäyksessä hyökkääjä saa palvelimen muodostamaan yhteyden sisäisiin palveluihin organisaation infrasa
 - Joissakin tapauksissa myös pystyy pakottamaan palvelimen muodostamaan yhteyden ulkoisiin järjestelmiin
+
 (PortSwigger 2025)
 #### Cross-site scripting
 - XSS on tietoturvahaavoittuvuus, missä hyökkääjä pääsee vaarantamaan käyttäjien toiminnot sovelluksen / sivun kanssa.
 - Hyökkääjä pystyy naamioitumaan olevansa käyttäjä ja suorittaa mitä tahansa käyttäjän toimintoja millä päästään käsiksi tietoihin
 - Yleisesti ottaen hyökkääjä käyttää hyväkseen verkkosivuston kyvyttömyyttä erottaa luotettava ja epäluotettava sisältö toisistaan
+
 (PortSwigger 2025)
 ## a) Totally Legit Sertificate.
 
