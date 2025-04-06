@@ -131,8 +131,36 @@ Tehtävä tämän myötä suoritettu.
 
 ![K18](18.png)
 
+(PortSwigger 2025)
 ## d) Stored XSS into HTML context with nothing encoded
+Tehtävänannon perusteella oli tiedossa, että tavoitteena oli tällä kertaa löytää vastaava haavoittuuvuus kuin c) tehtävässä, mutta tällä kertaa blog postin kommenttikentästä. Tehtävä auki ja valitsin näistä vain ensimmäisen blogi postauksen.
 
+![K19](19.png)
+
+Testasin ensin kommenttikenttää ja tarkistelin lähdekoodia millaisessa muodossa syöte ilmenee.
+
+![K20](20.png)
+![K21](21.png)
+![K22](22.png)
+
+Ja kuten testistä nähdään, viesti löytyy suoraan p/p viitteen sisältä. Mitä jos syötetäänkin HTML koodia kommenttikenttään ja annetaan oma viestimme otsikointimuodosa h1/h1? 
+
+![K23](23.png)
+
+Viestihän näyttää tulevan otsikkona perille!
+
+![K24](24.png)
+
+Tavoitteena oli siis saada jälleen kutsumaan alert funktiota, kun blogipostia katsellaan joten annetaan edellisen tehtävän JavaScipt-koodi kommenttina.
+
+![K25](25.png)
+
+Ja nyt kun tarkastellaan blogin sivustoa, saadaan palautteena suoritettu skripti ja tehtävä onnistuneesti suoritettuna.
+
+![K26](26.png)
+![K27](27.png)
+
+(PortSwigger 2025)
 ## e) File path traversal, simple case
 
 ## f) File path traversal, traversal sequences blocked with absolute path bypass
@@ -162,6 +190,8 @@ PortSwigger 2025. Server-side request forgery (SSRF). Luettavissa: https://ports
 
 PortSwigger 2025. Cross-site scripting. Luettavissa: https://portswigger.net/web-security/cross-site-scripting Luettu 5.4.2025
 
+PortSwigger 2025. Lab: Reflected XSS into HTML context with nothing encoded. Luettavissa: https://portswigger.net/web-security/cross-site-scripting/reflected/lab-html-context-nothing-encoded Luettu 5.4.2025
 
+PortSwigger 2025. Lab: Stored XSS into HTML context with nothing encoded. Luettavissa: https://portswigger.net/web-security/cross-site-scripting/stored/lab-html-context-nothing-encoded Luettu 5.4.2025
 
 
