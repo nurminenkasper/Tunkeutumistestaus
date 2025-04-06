@@ -234,6 +234,45 @@ Ja kuten nähdään, Reponsena saadaan jälleen /etc/passwd sisältö. Tässä t
 ## h) Insecure direct object references
 **Tehtävien tekeminen jatkuu 6.4.2025 kello 11:30**
 
+Harjoituksen tavoitteena ja ohjeistuksena on suorittaa tyypillinen IDOR hyökkäys. Tehtävä auki ja tarkastellaan mitä tarjolla.
+
+![K45](45.png)
+
+Valitsin yhden kaupan tuotteista, mutta pisti myös samalla silmään vaihtoehdot "My Account" ja "Live chat". Tarkastelin hieman ZAP kautta tuotesivua, mutta tällä kertaa mitään vastaavaa ratkaisua ei löytynyt ja oikeastaan ainoa GET:product(productid) ei sisältänyt mitään merkittävää.
+
+![K46](46.png)
+![K47](47.png)
+
+Siirryin tarkastelemaan **My Account** sivustoa ja syöttelinkin testiksi syötteen ja tarkastelin sitä ZAProxyssä, mutta ei sieltäkään mitään mielenkiintoista varsinaisesti löytynyt.
+
+![K49](48.png)
+![K49](49.png)
+
+Hetken aikaan pyörin sivustolla ja olin vähän jumissa, mutta palasin tarkastelemaan varsinaista tehtävänantoa PortSwiggerin sivustolla ja huomasin, että tehtävässä pitää tarkastella **"user chat logs directly on the server's file system**, joten etsinnässä siis syöte mihin pääsee kirjoittamaan. Hyppäsin chattailemaan Live Chattiin, missä vastassa oli Hal Pline chatbotti.
+
+![K50](50.png)
+
+Ei se botti ainakaan suoraa antanut salasanaa pyytämällä, no mutta painetaan **View transcript** ja tarkastellaan tarkemmin ZAP puolella, mitä sisältää.
+
+![K52](52.png)
+
+GET:2.txt on siis selvästi chatbotin kanssa käymäni keskustelu. Tehtävänannossa olikin tavoite löytää tiedot staattisesta URL osoitteesta, joten mitä jos vaihdetaan Requestin 2.txt johonkin toiseen ja lähetään se takaisin?
+
+![K53](53.png)
+
+**"No transcript"** eli 0.txt ei sisällä mitään luettavaa. Kokeillaan seuraavaksi 1.txt.
+
+![K54](54.png)
+
+Bingo. Responsessa nähdään joku tallennettu keskustelu toisen kanssa, missä näyttää olevan myös salasana. Chatti ei varsinaisti kerro, onko keskustelija Carlos, mutta tehtävänannosta tiedämme sen olevan käyttäjätunnus joten testaan kirjautua tiedoilla.
+
+![K55](55.png)
+
+Ja toimiihan se, kirjautuminen onnistunut ja harjoitus suoritettu onnistuneesti.
+
+![K56](56.png)
+
+(PortSwigger 2025)
 ## i) Basic SSRF against the local server
 
 
