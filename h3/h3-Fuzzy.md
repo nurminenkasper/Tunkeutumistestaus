@@ -21,7 +21,7 @@
 
 ## b) Fuff me. Asenna FuffMe-harjoitusmaali. [Karvinen 2023: Fuffme - Install Web Fuzzing Target on Debian](https://terokarvinen.com/2023/fuffme-web-fuzzing-target-debian)
 
-## Ratkaise ffufme harjoitukset 
+## c) - h) Ratkaise ffufme harjoitukset 
 
 ### c) Basic Content Discovery
 
