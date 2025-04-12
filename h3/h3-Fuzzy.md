@@ -14,7 +14,11 @@
 ## x) Lue/katso/kuuntele ja tiivistä
 
 ### Karvinen 2023: Find Hidden Web Directories - Fuzz URLs with ffuf
+- Fuff on Joona "joohoi" Hoikkala kehittämät web fuzzer
+- Artikkelissa Fuffataan piilotettuja kansiorakenteita, mutta Fuff avulla voi web fuzzata mitä vain ja löytää web-palvelimilta esimerkiksi GET-, POST-parametrejä, hakemistoja, otsikoita yms.
+- Fuff on erittäin nopea ja Fuffia voi testata paikallisesti ilman internet-yhteyttä. Tärkeää onkin muistaa, että penetraatiotestauksen teknkiikoiden käyttö tulee suorittaa lain sekä eettisten perjaatteiden puitteissa.
 
+(Karvinen 2023; Nurminen 2024)
 ### Hoikkala 2023: ffuf README.md
 
 ## a) Fuzzzz. Ratkaise dirfuz-1 artikkelista [Karvinen 2023: Find Hidden Web Directories - Fuzz URLs with ffuf.](https://terokarvinen.com/2023/fuzz-urls-find-hidden-directories/)
