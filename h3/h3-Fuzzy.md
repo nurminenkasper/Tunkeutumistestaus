@@ -59,24 +59,134 @@ Bingo. Jäljelle jää esimerkiksi wp-admin ja .git. Selaimeen osoitteen perää
 
 (Karvinen 2023, 2025; Nurminen 2024)
 ## b) Fuff me. Asenna FuffMe-harjoitusmaali. [Karvinen 2023: Fuffme - Install Web Fuzzing Target on Debian](https://terokarvinen.com/2023/fuffme-web-fuzzing-target-debian)
+Fuffme harjoitusympäristöä varten oli tarpeellista asentaa Docker ja Git, että saadaan homma alkuun. Ohjeesta poiketen, ffuf löytyi jo valmiina joten sitä en asennellut uudestaan.
 
+        sudo apt-get install docker.io git
 
-## c) - h) Ratkaise ffufme harjoitukset 
+![K6](6.png)
+
+Haetaan GitHub repositorio ffufme:lle omalle virtuaalikoneelle.
+
+        git clone https://github.com/adamtlangley/ffufme
+
+![K7](7.png)
+
+Ohjelman rakentaminen käyntiin Dockerilla ja perään käynnistys.
+
+        sudo docker build -t ffufme .
+        sudo docker run -d -p 80:80 ffufme
+
+![K8](8.png)
+
+Helpommin sanottu kuin tehty! Näytti olevan TCP portti 80 jo käytössä, Apache2 se siellä varmasti kummittelee joten suljetaan se.
+
+        sudo systemctl stop apache2.service
+        sudo systemctl status apache2.service
+
+![K9](9.png)
+
+Uusi yritys käynnistelylle ja curlilla tarkistelu, lähtikö homma rokkaamaan.
+
+![K10](10.png)
+![K11](11.png)
+
+Hyvin pelittää. Tehtävää varten oli tarpeellista latailla myös wordlistit mitä ffufilla ajetaan.
+
+![K12](12.png)
+
+(Karvinen 2023; ffufme 2021)
+## c) - h) Ratkaise ffufme harjoitukset
+Tehtäviä varten sammuttelin varmuudeksi oman verkkoyhteyden, ettei fuzzatessa käy mitään vahinkoja.
+
+![K13](13.png)
 
 ### c) Basic Content Discovery
+Ensimmäinen tehtävä toimi tavallaan testinä, että tyypillinen perus fuzzaus käyttäen ffufia toimii localhostille, missä itse ffufme pyörii. Käyttöön wordlisteistä common.txt ja tavoitteena oli löytää **class** & **development.log**
 
+        ffuf -w ~/wordlists/common.txt -u http://localhost/cd/basic/FUZZ
+
+![K14](14.png)
+
+Löytyyhän ne. Curlataan vielä, niin nähdään mitä tiedostot sisältää.
+
+![K14_1](14_1.png)
+
+Lippu tehtävän ratkaisusta.
 ### d) Content Discovery With Recursion
+Seuraavassa tehtävässä lisäiltiin ffuf syötteeseen **-recursion**, mikä kertoo ffufille, että kun se kohtaa kansion tulee sen skannata sisältöä niin kauan kunnes enempää tuloksia ei löydy.
 
+        ffuf -w ~/wordlists/common.txt -recursion -u http://localhost/cd/recursion/FUZZ
+
+![K15](15.png)
+
+common.txt listaa hyödyntäen ffuf löysi kansiorakenteen **/admin** jonka alta löytyi **/users** ja sen sisältä vielä **/96**. Eli kokonaisuudessaan rakenne näyttäisi **http://localhost/cd/recursion/admin/users/96** ja sieltähän me löydetään lippu.
+
+
+![K15_1](15_1.png)
 ### e) Content Discovery With File Extensions
+Tehtävänannossa on tarkoitus fuzzata löytynyttä /logs kansiota, mutta sieltä ei päästä katsomaan tarkemmin sisältöä. Logs kansiossa saattaa kuitenkin olla sisällä .log päätteisiä tiedostoja, joten lisäämällä -e .log ffuf syötteeseen voidaan valita minkä tyyppisiä tiedostoja etsitään.
 
+        ffuf -w ~/wordlists/common.txt -e .log -u http://localhost/cd/ext/logs/FUZZ
+
+![K16](16.png)
+
+users.log sisältää varmaan käyttäjätietoja? Mielenkiintoista, tarkistellaan tarkemmin.
+
+![K16_1](16_1.png)
+
+Ei sentään, mutta tehtävän lippu joka tapauksessa.
 ### f) No 404 Status
+Tehtävässä on tarkoitus fuzzata ja tarkastella HTTP status koodeja, joten suoritetaan alkuskannaus.
 
+        ffuf -w ~/wordlists/common.txt -u http://localhost/cd/no404/FUZZ
+
+![K17](17.png)
+
+Vastauksia aika kattava määrä, kuvassa tietenkin vai murto-osa. Size 669 kokoisia vastauksia näyttää olevan aika runsas määrä, mitä jos filteroidaan jälleen -fs komennolla 669 bittiset tulokset pois ja katsotaan mitä jää jäljelle.
+
+        ffuf -w ~/wordlists/common.txt -u http://localhost/cd/no404/FUZZ -fs 669
+
+![K18](18.png)
+
+Mielenkiintoista, salaisuus on löytynyt. Tarkastellaan tarkemmin.
+
+![K18_1](18_1.png)
+
+Ohjainta ei ole olemassa, lippu kait se tämäkin on.
 ### g) Param Mining
+Tehtävässä jos tarkastellaan tarkemmin sivua **http://localhost/cd/param/data** nähdään, että vaadittavat parametrit puuttuu.
 
+![K19_1](19_1.png)
+
+Ffufilla voidaan kuitenkin antaa parameters.txt ja yrittää löytää puuttuvat parametrit.
+
+        ffuf -w ~/wordlists/parameters.txt -u http://localhost/cd/param/data?FUZZ=1
+
+![K19](19.png)
+
+Syötteestä me löydetäänkin puuttuva parametri **"debug"**
 ### h) Rate Limited
+Tehtävässä on käytössä sivustolla rate limitti, minkä takia pystyy lähettämään vain 50 pyyntöä sekunnissa. Kun fuzzataan osoitetta ilman rajoitinta, nähdäänkin aika pljon Status 429 koodeja, mitkä viittaa **"Too many requests"** virheeseen HTTP sivustolla.
+
+        ffuf -w ~/wordlists/common.txt -u http://localhost/cd/rate/FUZZ -mc 200,429
+
+![K20](20.png)
+
+Lisäämällä ffuf komennon väliin **-t 5 -p 0.1** saadaan rajoitettua pyyntöjen lähetystä nopeutta. Tarkalleen ottaen:
+
+- **-p**: Pysäyttää pyynnön 0.1 sekunniksi jokaisen pyynnön kohdalla
+- **-t**: Luo ffufista 5 versiota, mikä tarkoittaa, että enintään 50 pyyntöä sekunnissa
+
+        ffuf -w ~/wordlists/common.txt -t 5 -p 0.1 -u http://localhost/cd/rate/FUZZ -mc 200,429
+
+![K21](21.png)
+
+Näin jäljelle jää 200 koodeista oracle.
 
 **Tehtävän lopetusaika 12.4.2025 kello XXXX. Aktiivista työskentelyä yhteensä noin X tuntia XX minuuttia.**
 
 ## Lähteet
 Karvinen T 2025. h3 Fuzzy. Tero Karvisen verkkosivut. Luettavissa: https://terokarvinen.com/tunkeutumistestaus/ Luettu 12.4.2025
+
+
 
