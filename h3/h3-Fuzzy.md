@@ -178,10 +178,10 @@ Tehtävässä on käytössä sivustolla rate limitti, minkä takia pystyy lähet
 
 Lisäämällä ffuf komennon väliin **-t 5 -p 0.1** saadaan rajoitettua pyyntöjen lähetystä nopeutta. Tarkalleen ottaen:
 
+        ffuf -w ~/wordlists/common.txt -t 5 -p 0.1 -u http://localhost/cd/rate/FUZZ -mc 200,429
+
 - **-p**: Pysäyttää pyynnön 0.1 sekunniksi jokaisen pyynnön kohdalla
 - **-t**: Luo ffufista 5 versiota, mikä tarkoittaa, että enintään 50 pyyntöä sekunnissa
-
-        ffuf -w ~/wordlists/common.txt -t 5 -p 0.1 -u http://localhost/cd/rate/FUZZ -mc 200,429
 
 ![K21](21.png)
 
