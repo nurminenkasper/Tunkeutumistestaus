@@ -183,10 +183,14 @@ Lisäämällä ffuf komennon väliin **-t 5 -p 0.1** saadaan rajoitettua pyyntö
 
 Näin jäljelle jää 200 koodeista oracle.
 
-**Tehtävän lopetusaika 12.4.2025 kello XXXX. Aktiivista työskentelyä yhteensä noin X tuntia XX minuuttia.**
+**Tehtävän lopetusaika 12.4.2025 kello 14:00. Aktiivista työskentelyä yhteensä noin 2 tuntia 30 minuuttia.**
 
 ## Lähteet
 Karvinen T 2025. h3 Fuzzy. Tero Karvisen verkkosivut. Luettavissa: https://terokarvinen.com/tunkeutumistestaus/ Luettu 12.4.2025
 
+Karvinen T 2023. Find Hidden Web Directories - Fuzz URLs with ffuf. Luettavissa: https://terokarvinen.com/2023/fuzz-urls-find-hidden-directories/ Luettu 12.4.2025
 
+Joohoi 2023. ffuf Readme. GitHub. Luettavissa: https://github.com/ffuf/ffuf/blob/master/README.md Luettu 12.4.2025
+
+Karvinen T 2023. Fuffme - Install Web Fuzzing Target on Debian. Luettavissa: https://terokarvinen.com/2023/fuffme-web-fuzzing-target-debian/ Luettu 12.4.2025
 
