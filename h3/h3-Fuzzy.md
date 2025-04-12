@@ -17,10 +17,14 @@
 - Fuff on Joona "joohoi" Hoikkala kehittämät web fuzzer
 - Artikkelissa Fuffataan piilotettuja kansiorakenteita, mutta Fuff avulla voi web fuzzata mitä vain ja löytää web-palvelimilta esimerkiksi GET-, POST-parametrejä, hakemistoja, otsikoita yms.
 - Fuff on erittäin nopea ja Fuffia voi testata paikallisesti ilman internet-yhteyttä. Tärkeää onkin muistaa, että penetraatiotestauksen teknkiikoiden käyttö tulee suorittaa lain sekä eettisten perjaatteiden puitteissa.
+- Artikkelissa käydään läpi muutama eri harjoitus, miten ffufia voidaan testata lokaalisti ja sen eri komenteja
 
 (Karvinen 2023; Nurminen 2024)
 ### Hoikkala 2023: ffuf README.md
+- GitHub README sisältää kattavasti eri komentoja ffuf käytön tueksi
+- Lisäksi löytyy asennusohjeet ja esimerkkejä käytöstä
 
+(Joohoi 2023)
 ## a) Fuzzzz. Ratkaise dirfuz-1 artikkelista [Karvinen 2023: Find Hidden Web Directories - Fuzz URLs with ffuf.](https://terokarvinen.com/2023/fuzz-urls-find-hidden-directories/)
 Tämän olinkin jo toisella kurssilla ratkaissut, mutta muistin virkistämiseksi ratkaisin sen uudestaan. Alkuun oli tietenkin tarpeellista ladata itse **Fuff** ja kävin hakemassa sen suoraan GitHub sivustolta.
 
@@ -183,6 +187,8 @@ Lisäämällä ffuf komennon väliin **-t 5 -p 0.1** saadaan rajoitettua pyyntö
 
 Näin jäljelle jää 200 koodeista oracle.
 
+(Karvinen 2025; Mozilla 2025; BuildHackSecure 2021) 
+
 **Tehtävän lopetusaika 12.4.2025 kello 14:00. Aktiivista työskentelyä yhteensä noin 2 tuntia 30 minuuttia.**
 
 ## Lähteet
@@ -193,4 +199,11 @@ Karvinen T 2023. Find Hidden Web Directories - Fuzz URLs with ffuf. Luettavissa:
 Joohoi 2023. ffuf Readme. GitHub. Luettavissa: https://github.com/ffuf/ffuf/blob/master/README.md Luettu 12.4.2025
 
 Karvinen T 2023. Fuffme - Install Web Fuzzing Target on Debian. Luettavissa: https://terokarvinen.com/2023/fuffme-web-fuzzing-target-debian/ Luettu 12.4.2025
+
+Nurminen K 2024. h2 - Break & unbreak. GitHub. Luettavissa: https://github.com/nurminenkasper/Sovellusten-hakkerointi-ja-haavoittuvuudet/blob/main/h2/h2-break-and-unbreak.md#c-ratkaise-dirfuzt-1 Luettu 12.4.2025
+
+BuildHackSecure 2021. FFUF Me - Target Practice For FFUF. Luettavissa: https://github.com/BuildHackSecure/ffufme Luettu 12.4.2025
+
+Mozilla 2025. 429 Too Many Requests. Luettavissa: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/429 Luettu 12.4.2025
+
 
