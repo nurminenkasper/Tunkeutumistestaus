@@ -99,7 +99,7 @@ Hyvin pelittää. Tehtävää varten oli tarpeellista latailla myös wordlistit 
 ![K12](12.png)
 
 (Karvinen 2023; ffufme 2021)
-## c) - h) Ratkaise ffufme harjoitukset
+## c) - i) Ratkaise ffufme harjoitukset
 Tehtäviä varten sammuttelin varmuudeksi oman verkkoyhteyden, ettei fuzzatessa käy mitään vahinkoja.
 
 ![K13](13.png)
@@ -186,6 +186,21 @@ Lisäämällä ffuf komennon väliin **-t 5 -p 0.1** saadaan rajoitettua pyyntö
 ![K21](21.png)
 
 Näin jäljelle jää 200 koodeista oracle.
+
+**EDIT 12.4.2025 20:00 - Yksi tehtävistä jäänyt epähuomiossa tekemässä, lisätty alle**
+
+### i) Subdomains - Virtual Host Enumeration
+Hupsista, yksi tehtävistä jäänyt uupumaan. Tässä oli Ffufilla tarkoitus löytää subdomaineja hyödyntäen virtuaalisia hosteja ja muuttamalla host headeria.
+
+        ffuf -w ~/wordlists/subdomains.txt -H "Host: FUZZ.ffuf.me" -u http://localhost
+
+![K22](22.png)
+
+Ensimmäisessä syötteessä nähdään kaikki tulokset, 1495 bittisiä tuloksia iso kasa. mutta jälkimmäisessä suodatetaan ulos ne ja saadaan jäljelle mahdollisesti jotain mielenkiintoista
+
+        ffuf -w ~/wordlists/subdomains.txt -H "Host: FUZZ.ffuf.me" -u http://localhost -fs 1495
+
+![K23](23.png)
 
 (Karvinen 2025; Mozilla 2025; BuildHackSecure 2021) 
 
