@@ -187,7 +187,7 @@ Lisäämällä ffuf komennon väliin **-t 5 -p 0.1** saadaan rajoitettua pyyntö
 
 Näin jäljelle jää 200 koodeista oracle.
 
-**EDIT 12.4.2025 20:00 - Yksi tehtävistä jäänyt epähuomiossa tekemässä, lisätty alle**
+**EDIT 12.4.2025 20:00 - Yksi tehtävistä jäänyt epähuomiossa tekemättä, lisätty alle**
 
 ### i) Subdomains - Virtual Host Enumeration
 Hupsista, yksi tehtävistä jäänyt uupumaan. Tässä oli Ffufilla tarkoitus löytää subdomaineja hyödyntäen virtuaalisia hosteja ja muuttamalla host headeria.
