@@ -14,9 +14,18 @@
 ## x) Lue/katso/kuuntele ja tiivistä
 
 ### Karvinen 2022: Cracking Passwords with Hashcat
+- Artikkelissa käydään läpi Hashcatin käyttöä
+- Hashcatilla voidaan murtaa hasheja. Salasanoja ei säilötä plain textinä, vaan hashina ja ne voidaan murtaa
+- Artikkelissa asennetaan ja testataan miten murretaan hashista salasana, hyödyntäen sanakirjastoa
 
+(Karvinen 2022)
 ### Karvinen 2023: Crack File Password With John
+- Artikkelissa käsitellään John the Ripperin käyttöä
+- John the Ripper voi murtaa salasanoja kirjastohyökkäyksillä
+- Artikkelissa käydään läpi hyökkäys ZIP salasanaa kohtaan
+- John the Ripperiä voidaan kuitenkin käyttää todella moneen eri formaattiin
 
+(Karvinen 2023)
 ## a) Asenna Hashcat ja testaa sen toiminta murtamalla esimerkkisalasana.
 Tehtävää varten noudatin [Teron artikkelista](https://terokarvinen.com/2022/cracking-passwords-with-hashcat/) löytyviä ohjeita. Alkuun oli tietenkin tarpeellista asentaa itse Hashcat.
 
