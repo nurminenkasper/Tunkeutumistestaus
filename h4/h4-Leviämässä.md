@@ -145,6 +145,8 @@ Nyt voidaan Metasploitablen puolelta käynnistellä kyseinen payload.
 
 Lopputuloksena saadaan käyntiin ja voidaan käynnistellä shell, mistä päästään suorittamaan komentoja metasploitina.
 
+![K28](28.png)
+
 **Tehtävän lopetusaika 22.4.2025 kello 19:20. Aktiivista työskentelyä yhteensä noin 2 tuntia 20 minuuttia.**
 
 ## Lähteet
