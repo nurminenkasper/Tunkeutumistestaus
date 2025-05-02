@@ -17,6 +17,28 @@
 
 ### Review
 
+## HackTheBox
+Tunnarit oli tarpeellista tehdä ja viritellä OpenVPN kautta VPN yhteys pystyyn. HackTheBox ohjeet oli selkeät, latailla sopiva vaihtoehto ja suorittaa se OpenVPN.
+
+![K1](1.png)
+
+Kuvasta poiketen, käytin UDP valintaa. Lataamisen jälkeen terminaali auki ja suorittaminen tapahtui `sudo openvpn starting_point_Hulluduunari.ovpn`
+
+![K2](2.png)
+
+Ja hommahan lähti hyvin toimimaan.
+
+![K3](3.png)
+
+Pingasin vielä testiksi VPN Serveriä, että homma rokkaa.
+
+![K4](4.png)
+
+Samaan syssyyn suorittelin myös muutaman tehtävän ennen Dancing, niin sai vähän tuntumaa miten homma toimii. Näistä ei sen tarkempaa raportointia.
+
+![K5](5.png)
+
+(HackTheBox 2025)
 ## a) HTB Dancing
 
 ## b) HTB Responder
@@ -25,4 +47,6 @@
 
 ## Lähteet
 Karvinen T 2025. h5 Kohti omaa treeniä. Tero Karvisen verkkosivut. Luettavissa: https://terokarvinen.com/tunkeutumistestaus/ Luettu 2.5.2025
+
+HackTheBox 2025.  Introduction to Starting Point. Luettavissa: https://help.hackthebox.com/en/articles/6007919-introduction-to-starting-point#h_04938711ab Luettu 2.5.2025
 
