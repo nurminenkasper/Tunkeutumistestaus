@@ -48,7 +48,7 @@ Ja tietenkin testit perään, että kone ylipäätänsä toimii.
 
 ![K7](7.png)
 
-**Task 1: What does the 3-letter acronym SMB stand for?**
+#### Task 1: What does the 3-letter acronym SMB stand for?
 
 Lyhyenne SMB vastaus oli Server Message Block.
 
