@@ -38,7 +38,7 @@ Samaan syssyyn suorittelin myös muutaman tehtävän ennen Dancing, niin sai vä
 
 ![K5](5.png)
 
-(HackTheBox 2025)
+(Ryan Gordon 2025)
 ## a) HTB Dancing
 Tehtävän aloittamista varten pystyyn kohdekone.
 
@@ -151,7 +151,7 @@ Ja näin ollen koko Dancing saatiin suoritettua!
 ## Lähteet
 Karvinen T 2025. h5 Kohti omaa treeniä. Tero Karvisen verkkosivut. Luettavissa: https://terokarvinen.com/tunkeutumistestaus/ Luettu 2.5.2025
 
-HackTheBox 2025.  Introduction to Starting Point. Luettavissa: https://help.hackthebox.com/en/articles/6007919-introduction-to-starting-point#h_04938711ab Luettu 2.5.2025
+Ryan Gordon 2025. HackTheBox - Introduction to Starting Point. Luettavissa: https://help.hackthebox.com/en/articles/6007919-introduction-to-starting-point#h_04938711ab Luettu 2.5.2025
 
 Wikipedia 2025. Server Message Block. Luettavissa: https://en.wikipedia.org/wiki/Server_Message_Block Luettu 2.5.2025
 
