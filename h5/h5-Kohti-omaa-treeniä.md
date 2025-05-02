@@ -145,8 +145,73 @@ Ja näin ollen koko Dancing saatiin suoritettua!
 
 (Ibrahim Atasoy 2023; SMB Wikipedia)
 ## b) HTB Responder
+Homma alkuun käynnistelemällä kohdekone Responder.
 
-**Tehtävän lopetusaika 2.5.2025 kello XX:XX. Aktiivista työskentelyä yhteensä noin X tuntia XX minuuttia.**
+![K35](35.png)
+
+#### Task 1: When visiting the web service using the IP address, what is the domain that we are being redirected to? 
+
+Lähdin selvittämään tehtävää ihan puhtaasti suunnistamalla Firefoxilla IP osoitteeseen. Vastaukseksi saatiin **unika.htb**, mutta sivulla ei näkynyt mitään.
+
+![K37](37.png)
+![K38](38.png)
+
+#### Task 2: Which scripting language is being used on the server to generate webpages?
+
+En oikein saanut alkuun kiinni, että miten pitäisi selvittää scripting language, jos en saanut koko sivulla mitään näkymään. Aikaisempia tehtäviä myötäillen, ajattelin porttiskannata osoittteen ja katsoa mitä löytyy.
+
+![K39](39.png)
+
+Okei, Apache toki kiinnitti huomion. Ei kuitenkaan ollut minkään sortin käsitystä, miksi sivustolla ei näy mitään. Lähdin tarkastelemaan ensin googlea, mutta lopulta ihan ohjetta miten tehtävä tehdään ja sielähän olikin mainita, että kyseesä on Name-Based Virtual Hosting ja /etc/hosts on asetettava domaini niin hostname toimii oikein.
+
+![K40](40.png)
+![K41](41.png)
+
+Nyt kun saatiin sivulle jotain näkyviin, alkuun tarkastelin aika pitkään eri elementtejä ihan Firefoxin omalla Inspector toolilla.
+
+![K42](42.png)
+
+Tässä olinkin jumissa pidemmän tovin ja mitään ei varsinaisesti löytynyt. Klikkailin eri vaihtoehtoja läpi ja oikeastaan puhtaasti sattumalla huomasin kun vaihtaa sivuston kieltä tapahtuu ainoa muutos osoiterivilläkin.
+
+![K43](43.png)
+
+Ja sieltähän tosissaan pilkistää **php** vastaukseksi
+
+![K44](44.png)
+
+#### Task 3: What is the name of the URL parameter which is used to load different language versions of the webpage? 
+
+Tämän vastaus löytyy luonnollisesti samasta URL osoitteesta kuin aikaisempi tehtävä, eli kyseessä on **page**
+
+![K45](45.png)
+
+#### Task 4: Which of the following values for the `page` parameter would be an example of exploiting a Local File Include (LFI) vulnerability: "french.html", "//10.10.14.6/somefile", "../../../../../../../../windows/system32/drivers/etc/hosts", "minikatz.exe" 
+
+Tehtävänannosta herätteli kyllä heti kelloja kyseinen "path traversal" tyyppinen näkymä. Lähdin kuitenkin tutkimaan, mikä tarkalleen on LFI vulnerability ja löysin artikkeliksi [Vaadatan blog postauksen](https://www.vaadata.com/blog/exploiting-an-lfi-local-file-inclusion-vulnerability-and-security-tips/) aiheesta. Eli LFI tavalla hyökkääjä pääsee kirjoittamaan, tässä tapauksessa page= perään omaa haluamaansa tekstiä ohjelmaan. Syötehän mitä haetaan annetaan jo perjaatteessa tehtävänannossa, joten kokeillaan `page=../../../../../../../../windows/system32/drivers/etc/hosts`
+
+![K47](47.png)
+
+Näinhän se toimii ja olotettavasti vastaus tehtäväänkin pitäisi olla sama, mutta ilman page=.
+
+![K48](48.png)
+
+#### Task 5: Which of the following values for the `page` parameter would be an example of exploiting a Remote File Include (RFI) vulnerability: "french.html", "//10.10.14.6/somefile", "../../../../../../../../windows/system32/drivers/etc/hosts", "minikatz.exe"
+
+Alotin tehtävään tutustumisen saman sivun [blog postauksella](https://www.vaadata.com/blog/what-is-rfi-remote-file-inclusion-exploitations-and-security-tips/) kuin edellisessä LFI tehtävässä oli. Kun LFI hyökkäys on mahdollinen, voidaan RFI hyökkäys teoteuttaa. Käytännössä hyökkääjällä on omalla sivulla .php tiedosto mistä hyökkäys lopulta suoritetaan. Kun LFI on todettu toimivaksi, voidaan RFI hyökkäys toteuttaa suoraan hyökkääjän omalta palvelimelta. PHP tiedostossa voi olla vaikka systeemin komentoja mitä suoritetaan tai muuta haitallista. Testasin tätä teoriassa `//10.10.14.6/somefile` mikä oli annettu jo tehtävänannossakin.
+
+![K50](50.png)
+
+Tehtävä oli ehkä oikein? Itselle jäi se kuitenkin hieman epäselväksi, joten tarkastelin asiaa vielä läpijuoksuohjeesta ja sielä olikin sivuttu tarkemmin [include](https://www.php.net/manual/en/function.include.php) liittyviä riskejä. Vastaus tehtävään oli siis lopulta: **//10.10.14.6/somefile**
+
+![K52](52.png)
+
+#### Task 6: What does NTLM stand for? 
+
+NTLM on lyhenne New Technology Lan Manager.
+
+#### Which flag do we use in the Responder utility to specify the network interface? 
+
+**Tehtävän lopetusaika X.2.2025 kello XX:XX. Aktiivista työskentelyä yhteensä noin X tuntia XX minuuttia.**
 
 ## Lähteet
 Karvinen T 2025. h5 Kohti omaa treeniä. Tero Karvisen verkkosivut. Luettavissa: https://terokarvinen.com/tunkeutumistestaus/ Luettu 2.5.2025
@@ -157,15 +222,26 @@ Wikipedia 2025. Server Message Block. Luettavissa: https://en.wikipedia.org/wiki
 
 Ibrahim Atasoy 2023. Smbclient command. Luettavissa: https://medium.com/@ibo1916a/smbclient-command-2803de274e46 Luettu 2.5.2025
 
-https://www.vaadata.com/blog/what-is-rfi-remote-file-inclusion-exploitations-and-security-tips/
 
-https://www.vaadata.com/blog/exploiting-an-lfi-local-file-inclusion-vulnerability-and-security-tips/
 
-https://profiletree.com/how-to-identify-the-programming-language/
+
+TÄMÄN JÄLKEEN KOHTAAN B.
+
+Maha Yassin 2024. How to Identify the Programming Language of a Website. Luettavissa: https://profiletree.com/how-to-identify-the-programming-language/ Luettu 2.5.2025
+
+Arnaud Pascal 2023. Exploiting an LFI (Local File Inclusion) Vulnerability and Security Tips. Luettavissa: https://www.vaadata.com/blog/exploiting-an-lfi-local-file-inclusion-vulnerability-and-security-tips/ Luettu 2.5.2025
+
+Renaud Cayol. What is RFI? Remote File Inclusion Exploitations and Security Tips. Luettavissa: https://www.vaadata.com/blog/what-is-rfi-remote-file-inclusion-exploitations-and-security-tips/ Luettu 2.5.2025
+
+PHP Documents. Luettavissa: https://www.php.net/manual/en/function.include.php Luettu 2.5.2025
+
+NTLM Wikipedia. Luettavissa: https://en.wikipedia.org/wiki/NTLM Luettu 2.5.2025
+
+
+
+
 
 https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/07-Input_Validation_Testing/11.1-Testing_for_Local_File_Inclusion
-
-https://en.wikipedia.org/wiki/NTLM
 
 https://www.kali.org/tools/responder/
 
