@@ -54,13 +54,13 @@ Lyhyenne SMB vastaus oli Server Message Block.
 
 ![K8](8.png)
 
-**Task 2: What port does SMB use to operate at?**
+#### Task 2: What port does SMB use to operate at?
 
 SMB operoi tyypillisesti TCP/445.
 
 ![K9](9.png)
 
-**Task 3: What is the service name for port 445 that came up in our Nmap scan?**
+#### Task 3: What is the service name for port 445 that came up in our Nmap scan?
 
 Seuraavassa tehtävässä olikin tarpeellsita selvitellä, millainen service 445 portista löytyy. Ei muuta kuin skannaamaan nmapilla kohdekoneen osoitetta: `sudo nmap 10.129.61.53`
 
@@ -70,14 +70,14 @@ Ja sieltähän me löydetään portista 445 **microsoft-ds**
 
 ![K12](12.png)
 
-**Task 4: What is the 'flag' or 'switch' that we can use with the smbclient utility to 'list' the available shares on Dancing?**
+#### Task 4: What is the 'flag' or 'switch' that we can use with the smbclient utility to 'list' the available shares on Dancing?
 
 Ei muuta kuin terminaalista smbclient käyttöohjeet auki, `smbclient -help` ei varsinaisesti ollut oikea vaihtoehto, mutta se listasin silti tarpeelliset tiedot ja nähdäänkin miten **-L** on kyseinen listaus vaihtoehto.
 
 ![K14](14.png)
 ![K15](15.png)
 
-**Task 5: How many shares are there on Dancing?**
+#### Task 5: How many shares are there on Dancing?
 
 Edellisessä tehtävässä opittiinkin se, miten listaus toteutaan niin kokeillaan myös käytännössä `smbclient -L 10.129.61.53`
 
@@ -87,8 +87,63 @@ Ja vaikka salasana ei ollut tiedossa, saatiin kuitenkin tietoon se kuinka monta 
 
 ![K18](18.png)
 
+#### Task 6: What is the name of the share we are able to access in the end with a blank password? 
 
+Mihin vaihtoehdoista pääsee sisälle pelkällä tyhjällä salasanalla? Smbclient ei ollut kovin tuttu, joten lähdin kokeilemaan miten kirjautua sisään.
 
+![K19](19.png)
+
+Nopeasti selvisi, että \ merkkejä puuttuu, mutta en oikeen saanut help vaihtoehdoista vastausta miten kirjautua sisään niin googlettamalla löytyi [Mediumin artikkeli](https://medium.com/@ibo1916a/smbclient-command-2803de274e46) mistä löytyi oikea tapa kirjautua sisään.
+
+![K20](20.png)
+
+Ja kuten nähdään IPC$ pääsi sisään ilman salasanaa. Käydäänpäs antamassa se vastauksena.
+
+![K21](21.png)
+
+Ei ollutkaan se. Testiksi vielä pääseekö WorkSharesille ja pääseehän sinnekkin ilman salasanaa, joten vastaus oli lopulta **WorkShares**!
+
+![K22](22.png)
+![K23](23.png)
+
+#### Task 7: What is the command we can use within the SMB shell to download the files we find? 
+
+Nyt kun meillä oli yhteys auki smb, kokeilin ensin tietenkin help komentoa ja sieltähän löytyi vastaus tehtävään eli **get**
+
+![K25](25.png)
+![K26](26.png)
+
+#### Submit root flag
+
+Lähdin tutkimaan tarkemmin, mitä kansiorakenteista löytyy `ls` komennolla
+
+![K28](28.png)
+
+Löytyi kaksi käyttäjää ja tutkin ensin mitä Amy.J alta löytyy.
+
+![K29](29.png)
+
+worknotes.txt voisi olla hyvin lippu, joten ladataan se talteen `get` komennolla.
+
+![K30](30.png)
+
+Tarkistetaan vielä, mitä Jmaes.P alta löytyy.
+
+![K31](31.png)
+
+Ahaa, lippu! Otetaan talteen sekin.
+
+![K32](32.png)
+
+Ja kun tarkastellaan niitä oman koneen puolella, nähdään ettei worknotes sisällä oikeastaan mitään järkevää, mutta puolestaan flag.txt sisältää tehtävän lipun.
+
+![K33](33.png)
+
+Ja näin ollen koko Dancing saatiin suoritettua!
+
+![K34](34.png)
+
+(Ibrahim Atasoy 2023; SMB Wikipedia)
 ## b) HTB Responder
 
 **Tehtävän lopetusaika 2.5.2025 kello XX:XX. Aktiivista työskentelyä yhteensä noin X tuntia XX minuuttia.**
@@ -98,9 +153,9 @@ Karvinen T 2025. h5 Kohti omaa treeniä. Tero Karvisen verkkosivut. Luettavissa:
 
 HackTheBox 2025.  Introduction to Starting Point. Luettavissa: https://help.hackthebox.com/en/articles/6007919-introduction-to-starting-point#h_04938711ab Luettu 2.5.2025
 
-https://en.wikipedia.org/wiki/Server_Message_Block
+Wikipedia 2025. Server Message Block. Luettavissa: https://en.wikipedia.org/wiki/Server_Message_Block Luettu 2.5.2025
 
-https://medium.com/@ibo1916a/smbclient-command-2803de274e46
+Ibrahim Atasoy 2023. Smbclient command. Luettavissa: https://medium.com/@ibo1916a/smbclient-command-2803de274e46 Luettu 2.5.2025
 
 https://www.vaadata.com/blog/what-is-rfi-remote-file-inclusion-exploitations-and-security-tips/
 
