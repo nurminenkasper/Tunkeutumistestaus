@@ -263,21 +263,60 @@ Tähän meillä olikin jo vastaus edeltävistä nmap porttiskannauksista, eli po
 
 ![K66](66.png)
 
-**Tehtävän lopetusaika X.2.2025 kello XX:XX. Aktiivista työskentelyä yhteensä noin X tuntia XX minuuttia.**
+#### Submit root flag
+
+Tässä kohti jäin kyllä pahasti jumiin. Googlailin pitkään, että millä ja miten ihmeellä pääsee kirjautumaan sisään salasanalla mikä murettiin. Mitään kovin järkevää ei omilla googlauksilla löytynyt, paitsi paljon suoria ratkaisuja tehtävään. Lopulta päädyin kuitenkin vilkaisemaan, että mitä ohjelmaa pitäisi käyttää ja tuloksena oli [Evil-Winrm](https://github.com/Hackplayers/evil-winrm). Halusin kuitenkin jättää itselle selvittämisen, miten ohjelmaa käytetään lipun löytämiseen. Aloitin asentamalla ohjelman.
+
+![K67](67.png)
+
+No, sehän oli Kaliin jo asennettuna valmiiksi. Seuraavaksi tutustuin ohjelmaan `evil-winrm -help` komennolla.
+
+![K68](68.png)
+
+Sieltähän löytyi heti vaihtoehto, missä annetaan IP osoite kirjautumiseen `-i` parametrillä.
+
+![K69](69.png)
+
+Ja kun olisi osannut alunperin käyttää silmiä ja lukea, olisi tajunnut että kyllähän se käyttäjätunnus ja salasana pitää lisätä myös syötteeseen. Nämähän meillä oli tiedossa jo, eli lopulta kirjautumissyöte oli `evil-winrm -i 10.129.58.17 -u administrator -p badminton`
+
+![K70](70.png)
+
+Okei, ollaan selvästi Powershellissä joten tyypilliset cd, dir yms komennot toimii kansioiden penkomiseen.
+
+![K71](71.png)
+
+Hetken aikaa tulikin Administrator käyttäjän kansioita pengottua, mutta mitään relevanttia ei löytynyt.
+
+![K72](72.png)
+
+Tarpeeksi "alas" kansiorakenteissa kun meni, löytyi myös käyttäjä Mike.
+
+![K73](73.png)
+![K74](74.png)
+
+Mike käyttäjän työpöydältä löytyikin flag.txt. Vielä pitis selvitellä, että millä ihmeellä Powershellissä luettiin sillä Linuxin tuttu cat komento ei toimi. Löysin [reddit postauksen](https://www.reddit.com/r/windows/comments/jfvpxq/linux_cat_alternative_for_cmd_on_windows/g9mt80p/) missä käyttäjä monoWench kertoi windowsille sopivan komennon **type**.
+
+![K75](75.png)
+
+Ja sieltähän meille löytyi lippu, eli tehtävä onnistuneesti suoritettuna! Tämä oli hieman haastavampi setti ja itse jouduin muutamaan kertaan turvautumaan läpikulkuohjeeseen, mutta ihan tyytyväinen myös siihen miten paljon sain itse ratkaistua asioita.
+
+![K76](76.png)
+
+(Yassin 2024; Pascal 2023; Cayol; PHP Documents; NTLM Wiki; Kali.org; lgandx 2025; Openwall 2025; Karvinen 2023; Nurminen 2025; Openwall; Hackplayers; monoWench)
+
+**Tehtävän lopetusaika 3.5.2025 kello 10:00. Aktiivista työskentelyä yhteensä noin 10 tuntia 00 minuuttia.**
 
 ## Lähteet
 Karvinen T 2025. h5 Kohti omaa treeniä. Tero Karvisen verkkosivut. Luettavissa: https://terokarvinen.com/tunkeutumistestaus/ Luettu 2.5.2025
+
+
+
 
 Ryan Gordon 2025. HackTheBox - Introduction to Starting Point. Luettavissa: https://help.hackthebox.com/en/articles/6007919-introduction-to-starting-point#h_04938711ab Luettu 2.5.2025
 
 Wikipedia 2025. Server Message Block. Luettavissa: https://en.wikipedia.org/wiki/Server_Message_Block Luettu 2.5.2025
 
 Ibrahim Atasoy 2023. Smbclient command. Luettavissa: https://medium.com/@ibo1916a/smbclient-command-2803de274e46 Luettu 2.5.2025
-
-
-
-
-TÄMÄN JÄLKEEN KOHTAAN B.
 
 Maha Yassin 2024. How to Identify the Programming Language of a Website. Luettavissa: https://profiletree.com/how-to-identify-the-programming-language/ Luettu 2.5.2025
 
@@ -289,19 +328,18 @@ PHP Documents. Luettavissa: https://www.php.net/manual/en/function.include.php L
 
 NTLM Wikipedia. Luettavissa: https://en.wikipedia.org/wiki/NTLM Luettu 2.5.2025
 
-Kali.org. Responder Tool Documentation. Luettavissa: https://www.kali.org/tools/responder/ Luettu 3.5.2025
+Kali.org. Responder Tool Documentation. Luettavissa: https://www.kali.org/tools/responder/ Luettu 2.5.2025
 
-lgandx 2025. Responder GitHub Repository. Luettavissa: https://github.com/lgandx/Responder Luettu 3.5.2025
+lgandx 2025. Responder GitHub Repository. Luettavissa: https://github.com/lgandx/Responder Luettu 2.5.2025
 
-Openwall 2025. John The Ripper GitHub Repository. Luettavissa: https://github.com/openwall/john Luettu 3.5.2025
+Openwall 2025. John The Ripper GitHub Repository. Luettavissa: https://github.com/openwall/john Luettu 2.5.2025
 
-Karvinen T 2023. Cracking Passwords with Hashcat. Luettavissa: https://terokarvinen.com/2022/cracking-passwords-with-hashcat/ Luettu 3.5.2025
+Karvinen T 2023. Cracking Passwords with Hashcat. Luettavissa: https://terokarvinen.com/2022/cracking-passwords-with-hashcat/ Luettu 2.5.2025
 
-Nurminen 2025. h3 Leviämässä. Luettavissa: https://github.com/nurminenkasper/Tunkeutumistestaus/blob/main/h4/h4-Levi%C3%A4m%C3%A4ss%C3%A4.md Luettu 3.5.2.25
+Nurminen 2025. h3 Leviämässä. Luettavissa: https://github.com/nurminenkasper/Tunkeutumistestaus/blob/main/h4/h4-Levi%C3%A4m%C3%A4ss%C3%A4.md Luettu 2.5.2025
 
-Openwall. John THe Ripper's command line syntax. Luettavissa: https://www.openwall.com/john/doc/OPTIONS.shtml Luettu 3.5.2025
+Openwall. John THe Ripper's command line syntax. Luettavissa: https://www.openwall.com/john/doc/OPTIONS.shtml Luettu 2.5.2025
 
-https://www.kali.org/tools/evil-winrm/
+Hackplayers. Evil-winrm GitHub Repository. Luettavissa: https://github.com/Hackplayers/evil-winrm Luettu 2.5.2025
 
-https://www.reddit.com/r/windows/comments/jfvpxq/linux_cat_alternative_for_cmd_on_windows/
-
+monoWench. Reddit - Linux 'cat' alternative for cmd on Windows. Luettavissa: https://www.reddit.com/r/windows/comments/jfvpxq/linux_cat_alternative_for_cmd_on_windows/ Luettu 2.5.2025
