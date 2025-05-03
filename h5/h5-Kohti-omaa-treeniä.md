@@ -209,7 +209,59 @@ Tehtävä oli ehkä oikein? Itselle jäi se kuitenkin hieman epäselväksi, jote
 
 NTLM on lyhenne New Technology Lan Manager.
 
-#### Which flag do we use in the Responder utility to specify the network interface? 
+![K53](53.png)
+
+#### Task 7: Which flag do we use in the Responder utility to specify the network interface?
+
+Responder utility oli itselle ihan vieras tekele, niin aloittelin hommaa googlaamalla tarkemmin toimintaa esimerkiksi [GitHub Repositoriosta](https://github.com/lgandx/Responder). Lähdin myös tarkastelemaan ohjelman käyttöä `responder -help` komennolla.
+
+![K54](54.png)
+
+Sieltähän löytyi heti myös oikea vastaus, eli **-I**.
+
+#### Task 8: There are several tools that take a NetNTLMv2 challenge/response and try millions of passwords to see if any of them generate the same response. One such tool is often referred to as `john`, but the full name is what?.
+
+Tätä ei paljoa tarvinnut miettiä, kun juuri edellisellä luennolla / tehtävissä oli käyty läpi [John The Ripperin](https://github.com/openwall/john) käyttöä.
+
+![K55](55.png)
+
+#### Task 9: What is the password for the administrator user?
+
+Tässä kohtaa piti kyllä hetken aikaa raapia päätä ennen kuin tajusin miten hakea salasanaa. Lopulta kun ymmärsin sen, että tehtävässä on tavoitteena laittaa Responder päälle toimimaan SMB serverinä ja sen jälkeen toteuttaa aikaisemmin tehty RFI hyökkäys sivustolle niin pitäisi saada jonkun sortin syöte varmasti aikaan. Lähdin ensin selvittämään, mikä verkkokortin nimi Respoderille annetaan.
+
+![K56](56.png)
+
+Ja kun tun0 on saatu selville, käynnistellään Responde `sudo responder -I tun0`
+
+![K57](57.png)
+![K58](58.png)
+
+Ja kun mennään sivustolle ja syötetään aikaisempaa Task 5 tehtävää vastaava hyökkäys, mutta luonnollisesti responderia vastaavalla IP-osoitteella saadaan hyökkäys toteutettua ja varmasti joku tuloste aikaan?
+
+![K59](59.png)
+![K60](60.png)
+
+Hei! Meillähän on salasanan Hash nyt tiedossa. Aikaisemmassa tehtävässä olikin vihje siitä, millä tuon voisi murtaa eli John The Ripper. Ensin on tarpeellista kuitenkin viedä kyseinen hash .txt tiedostoon.
+
+![K61](61.png)
+
+Ihan mielenkiinnosta lähdin tämän tehtävän neuvoja poiketen kokeilemaan [Teron opeilla](https://terokarvinen.com/2022/cracking-passwords-with-hashcat/) hashcatilla murtamista.
+
+![K62](62.png)
+
+Höh, en tiedä teinkö jotain väärin vai oliko hash tosissaan vain liian pitkä hashcatille. Seuraavaksi pitikin selvitellä, että miten suosittua rockyou sanakirjastoa voisi hyödyntää John The Ripperin kanssa. Ratkaisu löytyikin suoraan john the ripperin [dokumentaatiosta](https://www.openwall.com/john/doc/OPTIONS.shtml). Eli syötteellä `john --wordlist=/home/kali/hashed/rockyou.txt hash.txt` saatiin john pyörimään hyödyntäen hashed kansiossa ollutta rockyou.txt kirjastoa.
+
+![K64](64.png)
+
+Ja hei, sielätähän meille löytyikin salasanaksi **badminton**
+
+![K65](65.png)
+
+#### We'll use a Windows service (i.e. running on the box) to remotely access the Responder machine using the password we recovered. What port TCP does it listen on?
+
+Tähän meillä olikin jo vastaus edeltävistä nmap porttiskannauksista, eli portti **5985**
+
+![K66](66.png)
 
 **Tehtävän lopetusaika X.2.2025 kello XX:XX. Aktiivista työskentelyä yhteensä noin X tuntia XX minuuttia.**
 
@@ -237,22 +289,19 @@ PHP Documents. Luettavissa: https://www.php.net/manual/en/function.include.php L
 
 NTLM Wikipedia. Luettavissa: https://en.wikipedia.org/wiki/NTLM Luettu 2.5.2025
 
+Kali.org. Responder Tool Documentation. Luettavissa: https://www.kali.org/tools/responder/ Luettu 3.5.2025
 
+lgandx 2025. Responder GitHub Repository. Luettavissa: https://github.com/lgandx/Responder Luettu 3.5.2025
 
+Openwall 2025. John The Ripper GitHub Repository. Luettavissa: https://github.com/openwall/john Luettu 3.5.2025
 
+Karvinen T 2023. Cracking Passwords with Hashcat. Luettavissa: https://terokarvinen.com/2022/cracking-passwords-with-hashcat/ Luettu 3.5.2025
 
-https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/07-Input_Validation_Testing/11.1-Testing_for_Local_File_Inclusion
+Nurminen 2025. h3 Leviämässä. Luettavissa: https://github.com/nurminenkasper/Tunkeutumistestaus/blob/main/h4/h4-Levi%C3%A4m%C3%A4ss%C3%A4.md Luettu 3.5.2.25
 
-https://www.kali.org/tools/responder/
-
-https://terokarvinen.com/2022/cracking-passwords-with-hashcat/
-
-https://github.com/nurminenkasper/Tunkeutumistestaus/blob/main/h4/h4-Levi%C3%A4m%C3%A4ss%C3%A4.md
-
-https://www.openwall.com/john/doc/
+Openwall. John THe Ripper's command line syntax. Luettavissa: https://www.openwall.com/john/doc/OPTIONS.shtml Luettu 3.5.2025
 
 https://www.kali.org/tools/evil-winrm/
 
 https://www.reddit.com/r/windows/comments/jfvpxq/linux_cat_alternative_for_cmd_on_windows/
-
 
