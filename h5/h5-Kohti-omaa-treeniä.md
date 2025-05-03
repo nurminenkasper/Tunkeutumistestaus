@@ -14,9 +14,20 @@
 ## x) Lue/katso/kuuntele ja tiivistä
 
 ### Karvinen 2025: Start Your Research with a Review Article
+- Review Articlella tarkoitetaan kirjallisuuskatsausta, missä tekijä on kirjoittanut tutkimuksiin pohjautuvaa yhteenvetoa.
+- Tyypillinen kirjallisuuskatsaus on rinnakkaisarvioitu ja sen tulee olla JUFO 1-3 rankattu.
+- Google Scholarista löytyy esimerkiksi rinnakkaisarvioituja kirjallisuuskatsauksia ja niiden JUFO numeron voi tarkastaa jufoportaalista
 
+(Karvinen 2025)
 ### Review
+Valitsin artikkeliksi [Guess Again (and Again and Again): Measuring Password Strength by Simulating Password-Cracking Algorithms](https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=a682272c359111327ec138736abcb1d3e5fc8685) kirjoittajina Patrick Gage Kelley, Saranga Komanduri, Michelle L. Mazurek, Rich Shay, Tim Vidas Lujo
+Bauer, Nicolas Christin, Lorrie Faith Cranor, Julio Lopez.
 
+"Published in: 2012 IEEE Symposium on Security and Privacy" ja JUFO-portaalin numero tälle on 3.
+
+Artikkeli käsittelee tekstipohjaisten salasanojen heikkoutta ja siihen liittyviä murtamismenetelmiä, sekä sisältää tutkimusta siitä kuinka vahva salasana riittää.
+
+(Karvinen 2025; IEEE Xplore; Kelley ym; JUFO-Portaali)
 ## HackTheBox
 Tunnarit oli tarpeellista tehdä ja viritellä OpenVPN kautta VPN yhteys pystyyn. HackTheBox ohjeet oli selkeät, latailla sopiva vaihtoehto ja suorittaa se OpenVPN.
 
@@ -309,8 +320,11 @@ Ja sieltähän meille löytyi lippu, eli tehtävä onnistuneesti suoritettuna! T
 ## Lähteet
 Karvinen T 2025. h5 Kohti omaa treeniä. Tero Karvisen verkkosivut. Luettavissa: https://terokarvinen.com/tunkeutumistestaus/ Luettu 2.5.2025
 
+Karvine T 2025. Start Your Research with a Review Article. Luettavissa: https://terokarvinen.com/review-article/ Luettu 2.5.2025
 
+Patrick Kelley ym 2012. Guess Again (and Again and Again): Measuring Password Strength by Simulating Password-Cracking Algorithms. Luettavissa: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6234434 Luettu 3.5.2025
 
+Jufo-Portaali. Julkaisufoorumi. Luettavissa: https://jfp.csc.fi/jufoportaali Luettu 3.5.2025
 
 Ryan Gordon 2025. HackTheBox - Introduction to Starting Point. Luettavissa: https://help.hackthebox.com/en/articles/6007919-introduction-to-starting-point#h_04938711ab Luettu 2.5.2025
 
