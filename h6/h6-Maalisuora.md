@@ -70,6 +70,7 @@ Kuten ylempänä näkyy, **keys** komennolla saatiin valittua tarvittavat avaime
 **get** komennolla flagia kehiin, toimi kuten cat.
 
 ![K7](7.png)
+
 ![K8](8.png)
 
 **Tehtävän lopetusaika 13.5.2025 kello XX:00. Aktiivista työskentelyä yhteensä noin XX tuntia XX minuuttia.**
