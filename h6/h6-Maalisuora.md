@@ -76,7 +76,7 @@ Kuten ylempänä näkyy, **keys** komennolla saatiin valittua tarvittavat avaime
 
 ![K8](8.png)
 
-**Tehtävän lopetusaika 13.5.2025 kello XX:00. Aktiivista työskentelyä yhteensä noin XX tuntia XX minuuttia.**
+**Tehtävän lopetusaika 13.5.2025 kello 17:00. Aktiivista työskentelyä yhteensä noin 4 tuntia 00 minuuttia.**
 
 ## Lähteet
 Karvinen T 2025. h6 Maalisuora. Tero Karvisen verkkosivut. Luettavissa: https://terokarvinen.com/tunkeutumistestaus/ Luettu 13.5.2025
