@@ -14,7 +14,9 @@
 ## x) Lue/katso/kuuntele ja tiivistä
 
 ### Deviant Ollam - [Why Does My Credit Card Have a Hole in It?](https://www.youtube.com/watch?v=XH_st471JEU)
-
+- Videolla käsitellään sitä, miksi Deviant on tehnyt luottokorttiinsa pienen reijän.
+- Pääsääntöisesti kyse on siitä, että reikä poistaa käytöstä sen NFC yli toimivan tap-to-pay, eli suomeksi lähimaksu ominaisuuden.
+- Ongelma on lähtenyt siitä, että jos kortti oli puhelimen lähellä niin NFC puhelimesta tunnisti sen kokoajan.
 
 ## a) Lippuvalmistelu
 
@@ -78,6 +80,8 @@ Kuten ylempänä näkyy, **keys** komennolla saatiin valittua tarvittavat avaime
 
 ## Lähteet
 Karvinen T 2025. h6 Maalisuora. Tero Karvisen verkkosivut. Luettavissa: https://terokarvinen.com/tunkeutumistestaus/ Luettu 13.5.2025
+
+Deviant Ollam Youtube. Why Does My Credit Card Have a Hole in It? Katsottavissa: https://www.youtube.com/watch?v=XH_st471JEU Katsottu 13.5.2025
 
 HackTheBox. Starting Point. Luettavissa: https://app.hackthebox.com/starting-point Luettu 13.5.2025
 
