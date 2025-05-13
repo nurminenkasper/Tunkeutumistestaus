@@ -22,7 +22,7 @@
 - Ei muuta ylimääräistä tai paikallista tekoälyä asennettuna
 
 ## b) Oma Korkki (HackTheBox Redeemer)
-Valitsin HackTheBoxista Remeeder koneen mitä lähteä ratkomaa. [Viikon 5](https://github.com/nurminenkasper/Tunkeutumistestaus/blob/main/h5/h5-Kohti-omaa-treeni%C3%A4.md) kotitehtävissä ratkoin jo muutaman ylimääräisenkin ennen varsinaisia tehtäviä, joten tämä on jatkoa niille.
+Valitsin HackTheBoxista Remeeder koneen mitä lähteä ratkomaa. [Viikon 5](https://github.com/nurminenkasper/Tunkeutumistestaus/blob/main/h5/h5-Kohti-omaa-treeni%C3%A4.md#hackthebox) kotitehtävissä ratkoin jo muutaman ylimääräisenkin ennen varsinaisia tehtäviä, joten tämä on jatkoa niille.
 
 ![K1](1.png)
 
