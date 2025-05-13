@@ -13,7 +13,8 @@
 
 ## x) Lue/katso/kuuntele ja tiivistä
 
-### REPLACE
+### Deviant Ollam - [Why Does My Credit Card Have a Hole in It?](https://www.youtube.com/watch?v=XH_st471JEU)
+
 
 ## a) Lippuvalmistelu
 
