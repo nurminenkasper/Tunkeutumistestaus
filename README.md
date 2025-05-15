@@ -10,4 +10,4 @@ Homework reports for Haaga-Helia Penetration Testing course. Reports in Finnish.
 - [Viikko 6](h6/h6-Maalisuora.md)
 
 ## Lipunryöstö (CTF)
-- Kilpailun sijoitus XXX
+- Kilpailun sijoitus jaettu 2. sija
